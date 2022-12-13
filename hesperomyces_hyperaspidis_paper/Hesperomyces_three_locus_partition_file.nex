@@ -1,0 +1,14 @@
+#nexus
+begin sets;
+  charset ITS1 = Hesperomyces_three_locus.nexus: 1-414;
+  charset 5.8S = Hesperomyces_three_locus.nexus: 415-574;
+  charset ITS2 = Hesperomyces_three_locus.nexus: 575-846;
+  charset LSU = Hesperomyces_three_locus.nexus: 846-1740;
+  charset MCM7 = Hesperomyces_three_locus.nexus: 1741-2362;
+  charpartition mymodels =
+    TPM2+F+G4: ITS1,
+    TNe: 5.8S,
+    TIM2+F+G4: ITS2,
+    TIM+F+G4: LSU,
+    TIM3e+G4: MCM7;
+end;

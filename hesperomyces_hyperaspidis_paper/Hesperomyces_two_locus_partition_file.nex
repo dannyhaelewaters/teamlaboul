@@ -1,0 +1,12 @@
+#nexus
+begin sets;
+  charset ITS1 = Hesperomyces_ITS_LSU.nexus: 1-414;
+  charset 5.8S = Hesperomyces_ITS_LSU.nexus: 415-574;
+  charset ITS2 = Hesperomyces_ITS_LSU.nexus: 575-846;
+  charset LSU = Hesperomyces_ITS_LSU.nexus: 847-1740;
+  charpartition mymodels =
+    TPM2+F+G4: ITS1,
+    TNe: 5.8S,
+    TIM2+F+G4: ITS2,
+    TIM+F+G4: LSU;
+end;
