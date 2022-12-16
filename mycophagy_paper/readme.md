@@ -1,1 +1,1 @@
-Data of the Mycophagy review in Journal of Fungi
+Files and data for Santamaria et al. 2022, Mycophagy: a global review of interactions between invertebrates and fungi (Journal of Fungi)
