@@ -1,0 +1,6 @@
+#nexus
+begin sets;
+  	CHARSET LSU = Gloeandromyces_LSU_SSU_TEF1.nexus: 1-918;
+  	CHARSET SSU = Gloeandromyces_LSU_SSU_TEF1.nexus: 919-1419;
+  	CHARSET TEF1 = Gloeandromyces_LSU_SSU_TEF1.nexus: 1420-2035;
+end;
