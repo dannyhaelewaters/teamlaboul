@@ -8,12 +8,12 @@ makeblastdb -in Atheliales_87.2_de_novo_sequencing.fa -dbtype nucl
 # next, search the database for a (related) gene of interest using sequence downloaded from GenBank - top hit is what you need
 # makeblastdb command adds three files, ending with .nhr, .nin and .nsq
 # but when you type blastn command for -db you simply use the name of the fasta file 
-
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelopsis_subinconspicua_LSU.txt -out Atheliales_genome_LSU_output.txt
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelopsis_subinconspicua_tef1.txt -out Atheliales_genome_tef1_output.txt
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelopsis_subinconspicua_rpb2.txt -out Atheliales_genome_rpb2_output.txt
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelopsis_subinconspicua_ITS.txt -out Atheliales_genome_ITS_output.txt
 
+# Athelopsis_subinconspicua_tef1.txt resulted in zero hits, blast new sequence
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelia_bombacina_tef1.txt -out Atheliales_genome_tef1_output2.txt
 
 # or, to see the results immediately on the commandline: 
