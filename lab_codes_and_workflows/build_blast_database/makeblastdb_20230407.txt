@@ -1,5 +1,5 @@
 # path to where blastn is located
-export PATH="$PATH:/projects/caqu8258/software/local/bin/"			
+export PATH="$PATH:/projects/xxxxxxxxxxx/software/local/bin/"			
 echo $PATH 
 
 # make a searchable database of the contigs
@@ -20,4 +20,3 @@ blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelia_bombacina_tef1.t
 blastn -db Atheliales_87.2_de_novo_sequencing.fa -query Athelia_bombacina_tef1.txt -outfmt "7 qacc sacc evalue qstart qend sstart send"
 
 # the output will tell you in which contig and where in that contig the gene of interest is located so you can extract it
-
