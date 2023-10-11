@@ -1,0 +1,8 @@
+#nexus
+begin sets;
+  	CHARSET ITS1 = Botryandromyces_ITS_LSU_SSU_conc.nexus: 1-352;
+	CHARSET 5.8S = Botryandromyces_ITS_LSU_SSU_conc.nexus: 353-481;
+  	CHARSET ITS2 = Botryandromyces_ITS_LSU_SSU_conc.nexus: 482-881;
+	CHARSET LSU = Botryandromyces_ITS_LSU_SSU_conc.nexus: 882-1850;
+	CHARSET SSU = Botryandromyces_ITS_LSU_SSU_conc.nexus: 1851-2929;
+end;

@@ -1,0 +1,701 @@
+IQ-TREE multicore version 1.6.12 for Windows 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    LAPTOP-G11ORRGT (AVX2, FMA3, 7 GB RAM)
+Command: iqtree -s Botryandromyces_ITS_LSU_SSU_conc.nexus -spp Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus -m MFP -AICc -alrt 1000
+Seed:    321519 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Aug 31 15:22:53 2023
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus ...
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 5 partitions...
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_LSU_SSU_conc.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 39 sequences with 2929 columns, 1009 distinct patterns
+506 parsimony-informative, 477 singleton sites, 1946 constant sites
+WARNING: Some sequence names are changed as follows:
+Appendiculina gregaria D. Haelew. 1008a MG438348 -> Appendiculina_gregaria_D._Haelew._1008a_MG438348
+Botryandromyces heteroceri D. Haelew. 4197b -> Botryandromyces_heteroceri_D._Haelew._4197b
+Botryandromyces ornatus AW821 MG674664 -> Botryandromyces_ornatus_AW821_MG674664
+Camptomyces sp. D. Haelew. 1222b MF314140 -> Camptomyces_sp._D._Haelew._1222b_MF314140
+Cantharomyces bledii LG503 MG687386 -> Cantharomyces_bledii_LG503_MG687386
+Corethromyces pallidus MG674649 -> Corethromyces_pallidus_MG674649
+Dimeromyces anisolabis LG532 MG687388 -> Dimeromyces_anisolabis_LG532_MG687388
+Eucantharomyces egae LG359 MG696305 -> Eucantharomyces_egae_LG359_MG696305
+Fanniomyces ceratophorus D. Haelew. 1136h MG958013 -> Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013
+Gloeandromyces pageanus f. pageanus D. Haelew. 1425a MH040536 -> Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536
+Gloeandromyces streblae D. Haelew. 1018a MG438338 -> Gloeandromyces_streblae_D._Haelew._1018a_MG438338
+Laboulbenia benjaminii D. Haelew. 3758a -> Laboulbenia_benjaminii_D._Haelew._3758a
+Laboulbenia bicornis D. Haelew. 4333a -> Laboulbenia_bicornis_D._Haelew._4333a
+Laboulbenia bruchii D. Haelew. 1346b -> Laboulbenia_bruchii_D._Haelew._1346b
+Laboulbenia calathi D. Haelew. 1007a -> Laboulbenia_calathi_D._Haelew._1007a
+Laboulbenia clivinalis D. Haelew. 3037a -> Laboulbenia_clivinalis_D._Haelew._3037a
+Laboulbenia collae D. Haelew. 3038b -> Laboulbenia_collae_D._Haelew._3038b
+Laboulbenia coneglianensis D. Haelew. 3759a -> Laboulbenia_coneglianensis_D._Haelew._3759a
+Laboulbenia cristata D. Haelew. 3970a -> Laboulbenia_cristata_D._Haelew._3970a
+Laboulbenia fasciculata D. Haelew. 3044a -> Laboulbenia_fasciculata_D._Haelew._3044a
+Laboulbenia giardii D. Haelew. 3052a -> Laboulbenia_giardii_D._Haelew._3052a
+Laboulbenia giardii D. Haelew. 4154a -> Laboulbenia_giardii_D._Haelew._4154a
+Laboulbenia pheropsophi D. Haelew. 1009b -> Laboulbenia_pheropsophi_D._Haelew._1009b
+Laboulbenia slackensis D. Haelew. 4131a -> Laboulbenia_slackensis_D._Haelew._4131a
+Laboulbenia spissa nom. prov. D. Haelew. 4199c -> Laboulbenia_spissa_nom._prov._D._Haelew._4199c
+Laboulbenia spissa nom. prov. D. Haelew. 4199d -> Laboulbenia_spissa_nom._prov._D._Haelew._4199d
+Laboulbenia vulgaris D. Haelew. 3774a -> Laboulbenia_vulgaris_D._Haelew._3774a
+Misgomyces dyschirii LG487 MG696572 -> Misgomyces_dyschirii_LG487_MG696572
+Monoicomyces homalotae D. Haelew. 1014c MG438346 -> Monoicomyces_homalotae_D._Haelew._1014c_MG438346
+Monoicomyces invisibilis MT004 KT800034 -> Monoicomyces_invisibilis_MT004_KT800034
+Monoicomyces nigrescens MG696256 -> Monoicomyces_nigrescens_MG696256
+Nycteromyces streblidinus D. Haelew. 1324b MH040554 -> Nycteromyces_streblidinus_D._Haelew._1324b_MH040554
+Nycteromyces streblidinus D. Haelew. 956a MH040553 -> Nycteromyces_streblidinus_D._Haelew._956a_MH040553
+Polyandromyces coptosomalis D. Haelew. 313f KT800035 -> Polyandromyces_coptosomalis_D._Haelew._313f_KT800035
+Polyandromyces coptosomalis HM499a MG438347 -> Polyandromyces_coptosomalis_HM499a_MG438347
+Rhachomyces philonthinus MG674659 -> Rhachomyces_philonthinus_MG674659
+Rhachomyces philonthinus TM10446 KT800036 -> Rhachomyces_philonthinus_TM10446_KT800036
+Stigmatomyces protrudens AF298232 -> Stigmatomyces_protrudens_AF298232
+Stigmatomyces rugosus D. Haelew. 1138a MH040563 -> Stigmatomyces_rugosus_D._Haelew._1138a_MH040563
+
+                                                               Gap/Ambiguity  Composition  p-value
+   1  Appendiculina_gregaria_D._Haelew._1008a_MG438348                84.33%    failed      0.81%
+   2  Botryandromyces_heteroceri_D._Haelew._4197b                     38.48%    failed      0.65%
+   3  Botryandromyces_ornatus_AW821_MG674664                          64.19%    passed     52.32%
+   4  Camptomyces_sp._D._Haelew._1222b_MF314140                       75.04%    failed      2.84%
+   5  Cantharomyces_bledii_LG503_MG687386                             64.66%    failed      0.00%
+   6  Corethromyces_pallidus_MG674649                                 65.86%    failed      0.00%
+   7  Dimeromyces_anisolabis_LG532_MG687388                           64.56%    failed      0.00%
+   8  Eucantharomyces_egae_LG359_MG696305                             64.94%    passed     15.76%
+   9  Fanniomyces_ceratophorus_D._Haelew._1136h_MG958013              74.67%    failed      0.79%
+  10  Gloeandromyces_pageanus_f._pageanus_D._Haelew._1425a_MH040536   80.64%    failed      0.80%
+  11  Gloeandromyces_streblae_D._Haelew._1018a_MG438338               81.56%    failed      0.45%
+  12  Laboulbenia_benjaminii_D._Haelew._3758a                         35.78%    failed      0.00%
+  13  Laboulbenia_bicornis_D._Haelew._4333a                           52.37%    failed      1.10%
+  14  Laboulbenia_bruchii_D._Haelew._1346b                            23.80%    failed      0.00%
+  15  Laboulbenia_calathi_D._Haelew._1007a                            63.33%    failed      0.17%
+  16  Laboulbenia_clivinalis_D._Haelew._3037a                         51.42%    failed      0.00%
+  17  Laboulbenia_collae_D._Haelew._3038b                             47.90%    failed      0.01%
+  18  Laboulbenia_coneglianensis_D._Haelew._3759a                     57.87%    failed      0.00%
+  19  Laboulbenia_cristata_D._Haelew._3970a                           60.67%    failed      0.01%
+  20  Laboulbenia_fasciculata_D._Haelew._3044a                        37.97%    failed      0.60%
+  21  Laboulbenia_giardii_D._Haelew._3052a                            63.54%    failed      0.38%
+  22  Laboulbenia_giardii_D._Haelew._4154a                            62.82%    failed      0.15%
+  23  Laboulbenia_pheropsophi_D._Haelew._1009b                        63.88%    failed      0.66%
+  24  Laboulbenia_slackensis_D._Haelew._4131a                         46.26%    failed      0.00%
+  25  Laboulbenia_spissa_nom._prov._D._Haelew._4199c                  60.94%    passed      6.66%
+  26  Laboulbenia_spissa_nom._prov._D._Haelew._4199d                  60.91%    passed      6.33%
+  27  Laboulbenia_vulgaris_D._Haelew._3774a                           45.78%    failed      0.00%
+  28  Misgomyces_dyschirii_LG487_MG696572                             64.19%    passed     28.02%
+  29  Monoicomyces_homalotae_D._Haelew._1014c_MG438346                83.85%    failed      0.11%
+  30  Monoicomyces_invisibilis_MT004_KT800034                         67.46%    failed      0.00%
+  31  Monoicomyces_nigrescens_MG696256                                64.15%    failed      0.00%
+  32  Nycteromyces_streblidinus_D._Haelew._1324b_MH040554             80.78%    failed      0.64%
+  33  Nycteromyces_streblidinus_D._Haelew._956a_MH040553              83.61%    failed      0.02%
+  34  Polyandromyces_coptosomalis_D._Haelew._313f_KT800035            66.85%    failed      0.00%
+  35  Polyandromyces_coptosomalis_HM499a_MG438347                     85.08%    failed      0.22%
+  36  Rhachomyces_philonthinus_MG674659                               64.53%    failed      0.12%
+  37  Rhachomyces_philonthinus_TM10446_KT800036                       81.39%    passed     48.58%
+  38  Stigmatomyces_protrudens_AF298232                               64.29%    failed      0.00%
+  39  Stigmatomyces_rugosus_D._Haelew._1138a_MH040563                 80.13%    failed      0.79%
+WARNING: 32 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                           63.60%  33 sequences failed composition chi2 test (p-value<5%; df=3)
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		3	352	0	187	MFP	ITS1
+WARNING: No parsimony-informative sites in partition ITS1
+2		8	129	2	123	MFP	5.8S
+3		9	400	126	163	MFP	ITS2
+4		17	969	113	755	MFP	LSU
+5		39	1079	265	718	MFP	SSU
+Degree of missing data: 0.438
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.016 seconds
+NOTE: ModelFinder requires 8 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -13244.842 / df: 84 / AIC: 26657.683 / AICc: 26662.704 / BIC: 27160.206
+Selecting individual models for 5 charsets using AICc...
+ No. Model        Score       Charset
+   1 TPM2+F       2029.359    ITS1
+   2 K2P+I        453.730     5.8S
+   3 GTR+F+G4     4625.576    ITS2
+   4 GTR+F+I+G4   6925.308    LSU
+   5 GTR+F+I+G4   11575.748   SSU
+Full partition model AICc score: 25765.682 (LnL: -12763.099  df:115)
+Partition information was printed to Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.best_scheme.nex
+Partition information in Raxml format was printed to Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.best_scheme
+
+All model information printed to Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.model.gz
+CPU time for ModelFinder: 38.625 seconds (0h:0m:38s)
+Wall-clock time for ModelFinder: 46.679 seconds (0h:0m:46s)
+
+NOTE: 3 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -13720.268
+Current log-likelihood at step 1: -12766.644
+Current log-likelihood at step 2: -12689.906
+Current log-likelihood at step 3: -12675.832
+Current log-likelihood at step 4: -12666.393
+Current log-likelihood at step 5: -12660.064
+Current log-likelihood at step 6: -12655.829
+Current log-likelihood at step 7: -12652.925
+Current log-likelihood at step 8: -12650.959
+Current log-likelihood at step 9: -12649.549
+Current log-likelihood at step 10: -12648.510
+Current log-likelihood at step 11: -12647.722
+Current log-likelihood at step 12: -12647.113
+Current log-likelihood at step 13: -12646.629
+Current log-likelihood at step 14: -12646.220
+Current log-likelihood at step 15: -12645.894
+Current log-likelihood at step 16: -12645.615
+Current log-likelihood at step 17: -12645.377
+Current log-likelihood at step 18: -12645.163
+Current log-likelihood at step 19: -12644.971
+Current log-likelihood at step 20: -12644.800
+Current log-likelihood at step 21: -12644.644
+Current log-likelihood at step 22: -12644.500
+Current log-likelihood at step 23: -12644.373
+Current log-likelihood at step 24: -12644.258
+Current log-likelihood at step 25: -12644.154
+Current log-likelihood at step 26: -12644.059
+Partition-specific rates:  1.469 0.075 4.016 0.738 0.074
+Parameters optimization took 25 rounds (2.489 sec)
+
+Computing ML distances based on estimated model parameters... 0.047 sec
+Computing BIONJ tree...
+0.048 seconds
+Log-likelihood of BIONJ tree: -12800.104
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.517 second
+Computing log-likelihood of 98 initial trees ... 2.245 seconds
+Current best score: -12632.553
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -12621.249
+Current log-likelihood at step 1: -12620.242
+Current log-likelihood at step 2: -12620.053
+Current log-likelihood at step 3: -12619.912
+Current log-likelihood at step 4: -12619.793
+Current log-likelihood at step 5: -12619.692
+Current log-likelihood at step 6: -12619.604
+Parameters optimization took 5 rounds (0.344 sec)
+
+BETTER TREE FOUND at iteration 1: -12619.604
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -12609.400
+Current log-likelihood at step 1: -12609.021
+Current log-likelihood at step 2: -12608.522
+Current log-likelihood at step 3: -12608.439
+Parameters optimization took 2 rounds (0.186 sec)
+
+BETTER TREE FOUND at iteration 3: -12608.439
+Iteration 10 / LogL: -12622.534 / Time: 0h:0m:8s
+Iteration 20 / LogL: -12634.440 / Time: 0h:0m:10s
+Finish initializing candidate tree set (15)
+Current best tree score: -12608.439 / CPU time: 7.958
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -12608.574 / Time: 0h:0m:13s (0h:0m:33s left)
+Iteration 40 / LogL: -12611.142 / Time: 0h:0m:15s (0h:0m:24s left)
+Iteration 50 / LogL: -12611.702 / Time: 0h:0m:17s (0h:0m:18s left)
+Iteration 60 / LogL: -12608.639 / Time: 0h:0m:19s (0h:0m:14s left)
+Iteration 70 / LogL: -12608.486 / Time: 0h:0m:22s (0h:0m:10s left)
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -12608.396
+Current log-likelihood at step 1: -12608.260
+Current log-likelihood at step 2: -12608.197
+Parameters optimization took 1 rounds (0.121 sec)
+
+UPDATE BEST LOG-LIKELIHOOD: -12608.197
+Iteration 80 / LogL: -12702.855 / Time: 0h:0m:24s (0h:0m:7s left)
+Iteration 90 / LogL: -12608.422 / Time: 0h:0m:27s (0h:0m:3s left)
+Iteration 100 / LogL: -12609.013 / Time: 0h:0m:29s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 104 ITERATIONS / Time: 0h:0m:30s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -12608.193
+Current log-likelihood at step 1: -12608.136
+Current log-likelihood at step 2: -12608.087
+Current log-likelihood at step 3: -12608.047
+Current log-likelihood at step 4: -12608.013
+Current log-likelihood at step 5: -12607.984
+Current log-likelihood at step 6: -12607.958
+Current log-likelihood at step 7: -12607.935
+Current log-likelihood at step 8: -12607.916
+Current log-likelihood at step 9: -12607.898
+Current log-likelihood at step 10: -12607.883
+Current log-likelihood at step 11: -12607.869
+Current log-likelihood at step 12: -12607.858
+Current log-likelihood at step 13: -12607.847
+Current log-likelihood at step 14: -12607.838
+Partition-specific rates:  1.447 0.075 4.111 0.720 0.063
+Parameters optimization took 13 rounds (0.662 sec)
+
+BEST SCORE FOUND : -12607.838
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+6.386 sec.
+Total tree length: 22.278
+
+Total number of iterations: 104
+CPU time used for tree search: 24.578 sec (0h:0m:24s)
+Wall-clock time used for tree search: 27.436 sec (0h:0m:27s)
+Total CPU time used: 33.391 sec (0h:0m:33s)
+Total wall-clock time used: 37.385 sec (0h:0m:37s)
+
+Analysis results written to: 
+  IQ-TREE report:                Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.iqtree
+  Maximum-likelihood tree:       Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.treefile
+  Likelihood distances:          Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.mldist
+  Best partitioning scheme:      Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.best_scheme.nex
+  Screen log file:               Botryandromyces_ITS_LSU_SSU_conc_partfile.nexus.log
+
+Date and Time: Thu Aug 31 15:24:23 2023

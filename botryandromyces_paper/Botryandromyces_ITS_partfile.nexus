@@ -1,0 +1,6 @@
+#nexus
+begin sets;
+  	CHARSET ITS1 = Botryandromyces_ITS_aligned.fasta: 1-352;
+	CHARSET 5.8S = Botryandromyces_ITS_aligned.fasta: 353-481;
+  	CHARSET ITS2 = Botryandromyces_ITS_aligned.fasta: 482-881;
+end;

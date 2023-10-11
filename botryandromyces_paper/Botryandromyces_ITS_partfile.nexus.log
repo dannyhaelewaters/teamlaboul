@@ -1,0 +1,253 @@
+IQ-TREE multicore version 1.6.12 for Windows 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    LAPTOP-G11ORRGT (AVX2, FMA3, 7 GB RAM)
+Command: iqtree -s Botryandromyces_ITS_aligned.fasta -spp Botryandromyces_ITS_partfile.nexus -m MFP -AICc -bb 1000
+Seed:    133315 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri May 19 11:53:29 2023
+Kernel:  AVX+FMA - 1 threads (4 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 4 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file Botryandromyces_ITS_partfile.nexus ...
+Reading alignment file Botryandromyces_ITS_aligned.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 9 sequences with 881 columns, 321 distinct patterns
+128 parsimony-informative, 280 singleton sites, 473 constant sites
+                                                Gap/Ambiguity  Composition  p-value
+   1  Botryandromyces_heteroceri_D._Haelew._4197b      20.89%    failed      0.00%
+   2  Laboulbenia_fasciculata_D._Haelew._3044a         19.86%    passed      8.75%
+   3  Laboulbenia_collae_D._Haelew._3038b              54.14%    passed     69.15%
+   4  Laboulbenia_vulgaris_D._Haelew._3774a            51.53%    passed     13.42%
+   5  Laboulbenia_benjaminii_D._Haelew._3758a          53.12%    passed     90.51%
+   6  Laboulbenia_clivinalis_D._Haelew._3037a          52.33%    passed     27.97%
+   7  Laboulbenia_slackensis_D._Haelew._4131a          52.10%    passed     75.86%
+   8  Laboulbenia_bruchii_D._Haelew._1346b             18.05%    failed      0.00%
+   9  _R_Laboulbenia_coneglianensis_D._Haelew._3759a   73.78%    failed      0.08%
+WARNING: 6 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                            43.98%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 3 partitions...
+Reading alignment file Botryandromyces_ITS_aligned.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 9 sequences with 881 columns, 321 distinct patterns
+128 parsimony-informative, 280 singleton sites, 473 constant sites
+                                                Gap/Ambiguity  Composition  p-value
+   1  Botryandromyces_heteroceri_D._Haelew._4197b      20.89%    failed      0.00%
+   2  Laboulbenia_fasciculata_D._Haelew._3044a         19.86%    passed      8.75%
+   3  Laboulbenia_collae_D._Haelew._3038b              54.14%    passed     69.15%
+   4  Laboulbenia_vulgaris_D._Haelew._3774a            51.53%    passed     13.42%
+   5  Laboulbenia_benjaminii_D._Haelew._3758a          53.12%    passed     90.51%
+   6  Laboulbenia_clivinalis_D._Haelew._3037a          52.33%    passed     27.97%
+   7  Laboulbenia_slackensis_D._Haelew._4131a          52.10%    passed     75.86%
+   8  Laboulbenia_bruchii_D._Haelew._1346b             18.05%    failed      0.00%
+   9  _R_Laboulbenia_coneglianensis_D._Haelew._3759a   73.78%    failed      0.08%
+WARNING: 6 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                            43.98%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_aligned.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 9 sequences with 881 columns, 321 distinct patterns
+128 parsimony-informative, 280 singleton sites, 473 constant sites
+                                                Gap/Ambiguity  Composition  p-value
+   1  Botryandromyces_heteroceri_D._Haelew._4197b      20.89%    failed      0.00%
+   2  Laboulbenia_fasciculata_D._Haelew._3044a         19.86%    passed      8.75%
+   3  Laboulbenia_collae_D._Haelew._3038b              54.14%    passed     69.15%
+   4  Laboulbenia_vulgaris_D._Haelew._3774a            51.53%    passed     13.42%
+   5  Laboulbenia_benjaminii_D._Haelew._3758a          53.12%    passed     90.51%
+   6  Laboulbenia_clivinalis_D._Haelew._3037a          52.33%    passed     27.97%
+   7  Laboulbenia_slackensis_D._Haelew._4131a          52.10%    passed     75.86%
+   8  Laboulbenia_bruchii_D._Haelew._1346b             18.05%    failed      0.00%
+   9  _R_Laboulbenia_coneglianensis_D._Haelew._3759a   73.78%    failed      0.08%
+WARNING: 6 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                            43.98%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Botryandromyces_ITS_aligned.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 9 sequences with 881 columns, 321 distinct patterns
+128 parsimony-informative, 280 singleton sites, 473 constant sites
+                                                Gap/Ambiguity  Composition  p-value
+   1  Botryandromyces_heteroceri_D._Haelew._4197b      20.89%    failed      0.00%
+   2  Laboulbenia_fasciculata_D._Haelew._3044a         19.86%    passed      8.75%
+   3  Laboulbenia_collae_D._Haelew._3038b              54.14%    passed     69.15%
+   4  Laboulbenia_vulgaris_D._Haelew._3774a            51.53%    passed     13.42%
+   5  Laboulbenia_benjaminii_D._Haelew._3758a          53.12%    passed     90.51%
+   6  Laboulbenia_clivinalis_D._Haelew._3037a          52.33%    passed     27.97%
+   7  Laboulbenia_slackensis_D._Haelew._4131a          52.10%    passed     75.86%
+   8  Laboulbenia_bruchii_D._Haelew._1346b             18.05%    failed      0.00%
+   9  _R_Laboulbenia_coneglianensis_D._Haelew._3759a   73.78%    failed      0.08%
+WARNING: 6 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                            43.98%  3 sequences failed composition chi2 test (p-value<5%; df=3)
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		3	352	0	187	MFP	ITS1
+WARNING: No parsimony-informative sites in partition ITS1
+2		8	129	2	123	MFP	5.8S
+3		9	400	126	163	MFP	ITS2
+Degree of missing data: 0.283
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.006 seconds
+NOTE: ModelFinder requires 2 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -3645.185 / df: 24 / AIC: 7338.370 / AICc: 7339.772 / BIC: 7453.115
+Selecting individual models for 3 charsets using AICc...
+ No. Model        Score       Charset
+   1 TPM2u+F      2027.662    ITS1
+   2 K2P+I        453.505     5.8S
+   3 GTR+F+G4     4605.435    ITS2
+Full partition model AICc score: 7116.250 (LnL: -3523.800  df:33)
+Partition information was printed to Botryandromyces_ITS_partfile.nexus.best_scheme.nex
+Partition information in Raxml format was printed to Botryandromyces_ITS_partfile.nexus.best_scheme
+
+All model information printed to Botryandromyces_ITS_partfile.nexus.model.gz
+CPU time for ModelFinder: 1.562 seconds (0h:0m:1s)
+Wall-clock time for ModelFinder: 1.689 seconds (0h:0m:1s)
+Generating 1000 samples for ultrafast bootstrap (seed: 133315)...
+
+NOTE: 1 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -3682.371
+Current log-likelihood at step 1: -3549.216
+Current log-likelihood at step 2: -3538.374
+Current log-likelihood at step 3: -3536.238
+Current log-likelihood at step 4: -3535.246
+Current log-likelihood at step 5: -3534.619
+Current log-likelihood at step 6: -3534.173
+Current log-likelihood at step 7: -3533.808
+Current log-likelihood at step 8: -3533.494
+Current log-likelihood at step 9: -3533.194
+Current log-likelihood at step 10: -3532.919
+Current log-likelihood at step 11: -3532.654
+Current log-likelihood at step 12: -3532.396
+Current log-likelihood at step 13: -3532.144
+Current log-likelihood at step 14: -3531.896
+Current log-likelihood at step 15: -3531.652
+Current log-likelihood at step 16: -3531.413
+Current log-likelihood at step 17: -3531.176
+Current log-likelihood at step 18: -3530.945
+Current log-likelihood at step 19: -3530.719
+Current log-likelihood at step 20: -3530.496
+Current log-likelihood at step 21: -3530.273
+Current log-likelihood at step 22: -3530.070
+Current log-likelihood at step 23: -3529.854
+Current log-likelihood at step 24: -3529.661
+Current log-likelihood at step 25: -3529.468
+Current log-likelihood at step 26: -3529.278
+Current log-likelihood at step 27: -3529.093
+Current log-likelihood at step 28: -3528.912
+Current log-likelihood at step 29: -3528.737
+Current log-likelihood at step 30: -3528.566
+Current log-likelihood at step 31: -3528.396
+Current log-likelihood at step 32: -3528.234
+Current log-likelihood at step 33: -3528.074
+Current log-likelihood at step 34: -3527.921
+Current log-likelihood at step 35: -3527.769
+Current log-likelihood at step 36: -3527.622
+Current log-likelihood at step 37: -3527.480
+Current log-likelihood at step 38: -3527.341
+Current log-likelihood at step 39: -3527.203
+Current log-likelihood at step 40: -3527.071
+Current log-likelihood at step 41: -3526.941
+Current log-likelihood at step 42: -3526.815
+Current log-likelihood at step 43: -3526.692
+Current log-likelihood at step 44: -3526.575
+Current log-likelihood at step 45: -3526.460
+Current log-likelihood at step 46: -3526.348
+Current log-likelihood at step 47: -3526.239
+Current log-likelihood at step 48: -3526.134
+Current log-likelihood at step 49: -3526.035
+Partition-specific rates:  0.640 0.099 1.607
+Parameters optimization took 48 rounds (0.355 sec)
+
+Computing ML distances based on estimated model parameters... 0.000 sec
+WARNING: Some pairwise ML distances are too long (saturated)
+Computing BIONJ tree...
+0.017 seconds
+Log-likelihood of BIONJ tree: -3525.932
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.096 second
+Computing log-likelihood of 80 initial trees ... 0.108 seconds
+Current best score: -3525.671
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -3523.073
+Current log-likelihood at step 1: -3520.205
+Current log-likelihood at step 2: -3519.952
+Current log-likelihood at step 3: -3519.947
+Parameters optimization took 2 rounds (0.023 sec)
+
+BETTER TREE FOUND at iteration 1: -3519.947
+Iteration 10 / LogL: -3519.983 / Time: 0h:0m:0s
+Iteration 20 / LogL: -3519.982 / Time: 0h:0m:1s
+Finish initializing candidate tree set (3)
+Current best tree score: -3519.947 / CPU time: 0.707
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+Iteration 30 / LogL: -3523.842 / Time: 0h:0m:1s (0h:0m:3s left)
+Iteration 40 / LogL: -3521.629 / Time: 0h:0m:1s (0h:0m:2s left)
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+Iteration 50 / LogL: -3523.583 / Time: 0h:0m:1s (0h:0m:1s left)
+Log-likelihood cutoff on original alignment: -3545.524
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+Iteration 60 / LogL: -3523.582 / Time: 0h:0m:2s (0h:0m:1s left)
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+Iteration 70 / LogL: -3523.582 / Time: 0h:0m:2s (0h:0m:1s left)
+Iteration 80 / LogL: -3523.446 / Time: 0h:0m:2s (0h:0m:0s left)
+Iteration 90 / LogL: -3523.582 / Time: 0h:0m:2s (0h:0m:0s left)
+UPDATE BEST LOG-LIKELIHOOD: -3519.947
+Iteration 100 / LogL: -3523.842 / Time: 0h:0m:2s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -3545.961
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.997
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:3s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -3519.947
+Current log-likelihood at step 1: -3519.945
+Partition-specific rates:  0.670 0.030 1.604
+Parameters optimization took 0 rounds (0.011 sec)
+
+BEST SCORE FOUND : -3519.945
+Creating bootstrap support values...
+Split supports printed to NEXUS file Botryandromyces_ITS_partfile.nexus.splits.nex
+Total tree length: 3.205
+
+Total number of iterations: 102
+CPU time used for tree search: 2.391 sec (0h:0m:2s)
+Wall-clock time used for tree search: 2.578 sec (0h:0m:2s)
+Total CPU time used: 2.641 sec (0h:0m:2s)
+Total wall-clock time used: 3.130 sec (0h:0m:3s)
+
+Computing bootstrap consensus tree...
+Reading input file Botryandromyces_ITS_partfile.nexus.splits.nex...
+9 taxa and 87 splits.
+Consensus tree written to Botryandromyces_ITS_partfile.nexus.contree
+Reading input trees file Botryandromyces_ITS_partfile.nexus.contree
+Log-likelihood of consensus tree: -3519.945
+
+Analysis results written to: 
+  IQ-TREE report:                Botryandromyces_ITS_partfile.nexus.iqtree
+  Maximum-likelihood tree:       Botryandromyces_ITS_partfile.nexus.treefile
+  Likelihood distances:          Botryandromyces_ITS_partfile.nexus.mldist
+  Best partitioning scheme:      Botryandromyces_ITS_partfile.nexus.best_scheme.nex
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          Botryandromyces_ITS_partfile.nexus.splits.nex
+  Consensus tree:                Botryandromyces_ITS_partfile.nexus.contree
+  Screen log file:               Botryandromyces_ITS_partfile.nexus.log
+
+Date and Time: Fri May 19 11:53:34 2023
