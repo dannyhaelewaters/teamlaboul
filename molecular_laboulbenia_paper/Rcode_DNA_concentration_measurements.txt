@@ -1,0 +1,44 @@
+```{r}
+library(readxl)
+library(ggplot2)
+library(car)
+library(lme4)
+library(emmeans)
+library(magrittr)
+library(DHARMa)
+```
+
+```{r}
+Metingen_DNA_conc <- read_excel("F:/UGent/2022-2023/Masterthesis/Metingen DNA conc z30.xlsx")
+
+Metingen_DNA_conc %>% #Boxplots of the DNA concentration per extraction protocol
+  ggplot() + aes(RepliG, conc_origineel_yg_ml, fill = RepliG) + 
+  geom_boxplot() +
+  xlab('REPLI-g protocol') +
+  ylab('DNA concentration of extraction (in µg/ml)') +
+  theme(legend.position = "none") +
+  annotate("text",
+           x = 1:length(table(Metingen_DNA_conc$RepliG)),
+           y = aggregate(conc_origineel_yg_ml ~ RepliG, Metingen_DNA_conc, median)[ , 2],
+           label = table(Metingen_DNA_conc$RepliG),
+           col = "black",
+           vjust = -0.4)+
+  scale_fill_manual('Storage', values=c('coral2','steelblue'))
+
+#linear model of the DNA concentration depending on the extraction protocol
+lm.model1<-lmer(conc_origineel_yg_ml~RepliG+(1|Species), data=Metingen_DNA_conc)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+emmeans(lm.model1, specs = pairwise ~ RepliG)
+```
+
+```{r}
+#test assumptions for lmer
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+```
+
