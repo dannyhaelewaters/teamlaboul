@@ -1,0 +1,149 @@
+```{r}
+library(readxl)
+library(emmeans)
+library(lme4)
+library(stats)
+library(ggplot2)
+library(DHARMa)
+library(magrittr)
+library(dplyr)
+library(tidyverse)
+```
+
+```{r}
+DNA_extractie_protocollen <- read_excel("F:/UGent/2022-2023/Masterthesis/DNA extractions protocols.xlsx")
+
+DNA_extractie_protocollen %>% #Barplots of extraction success depending on method of preservation
+  count(Storage, Extraction_success) %>%
+  group_by(Storage) %>%
+  ggplot() + aes(Storage, n, fill = Extraction_success, label = n) + 
+  geom_col() +
+  geom_text(position=position_stack(0.5)) +
+  xlab('Preservation method') +
+  ylab('Amount of extractions') +
+  scale_fill_manual('DNA extraction', values=c('steelblue','coral2'))
+
+DNA_extractie_protocollen %>% #Barplots of extraction success depending extraction protocol
+  count(BSA_and_RepliG, Extraction_success) %>%
+  group_by(BSA_and_RepliG) %>%
+  ggplot() + aes(BSA_and_RepliG, n, fill = Extraction_success, label = n) + 
+  geom_col() +
+  geom_text(position=position_stack(0.5)) +
+  xlab('BSA is added (No/Yes) and which REPLI-g protocol is used') +
+  ylab('Amount of extractions') +
+  scale_fill_manual('Extraction success', values=c('steelblue','coral2'))
+```
+
+```{r}
+#generalized linear model of extraction success  depending on the extraction protocol
+full <- glmer(Extraction_success_bin~BSA_added*RepliG+Storage+(1|Species), family = binomial, data=DNA_extractie_protocollen)
+summary(full)
+emmeans(full, specs = pairwise ~ Storage, type = "respons")
+emmeans(full, specs = pairwise ~ BSA_added*RepliG, type = "respons")
+```
+
+```{r}
+#test assumptions for glmer
+testDispersion(full)
+testUniformity(full)
+testOutliers(full)
+simulationOutput <- simulateResiduals(fittedModel = full, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+```
+
+```{r}
+extractions_over_time <- read_excel("F:/UGent/2022-2023/Masterthesis/DNA extractions over time.xlsx")
+
+extractions_over_time %>% #Barplots of extractions success depending on the years between collection and DNA extraction
+  count(Extraction_success, Storage, Extraction_made_years_after_collection) %>%
+  group_by(Extraction_made_years_after_collection) %>%
+  ggplot() + aes(Extraction_made_years_after_collection, n, fill = Extraction_success) + 
+  geom_bar(position="dodge", stat="identity") +
+  geom_col() +
+  facet_grid(.~Storage) +
+  xlab('Years between collection and DNA extraction') +
+  ylab('Amount of extractions') +
+  scale_fill_manual('DNA extraction', values=c('steelblue','coral2'))
+
+extractions_over_time %>% #Barplots of extractions success depending on the months between collection and DNA extraction
+  count(Extraction_success, Storage, Extraction_made_months_after_collection) %>%
+  group_by(Extraction_made_months_after_collection) %>%
+  ggplot() + aes(Extraction_made_months_after_collection, n, fill = Extraction_success) + 
+  geom_bar(position="dodge", stat="identity") +
+  geom_col() +
+  facet_grid(.~Storage) +
+  xlab('Months between collection and DNA extraction') +
+  ylab('Amount of extractions') +
+  scale_fill_manual('DNA extraction', values=c('steelblue','coral2'))
+```
+
+```{r}
+extractions_over_time %>% #Barplots of percentage of extraction success depending on the years between collection and DNA extraction
+  count(Extraction_success, Storage, Extraction_made_years_after_collection) %>%    
+  group_by(Extraction_made_years_after_collection, Storage) %>%
+  mutate(pct= prop.table(n) * 100) %>%
+  ggplot() + aes(Extraction_made_years_after_collection, pct, fill=Extraction_success) +
+  geom_bar(stat="identity") +
+  geom_col() +
+  facet_grid(.~Storage) +
+  xlab('Years between collection and DNA extraction') +
+  ylab('Percentage of extractions') +
+  scale_fill_manual('DNA extraction', values=c('steelblue','coral2'))
+
+extractions_over_time %>% #Barplots of percentage of extraction success depending on the months between collection and DNA extraction
+  count(Extraction_success, Storage, Extraction_made_months_after_collection) %>%    
+  group_by(Extraction_made_months_after_collection, Storage) %>%
+  mutate(pct= prop.table(n) * 100) %>%
+  ggplot() + aes(Extraction_made_months_after_collection, pct, fill=Extraction_success) +
+  geom_bar(stat="identity") +
+  geom_col() +
+  facet_grid(.~Storage) +
+  xlab('Months between collection and DNA extraction') +
+  ylab('Percentage of extractions') +
+  scale_fill_manual('DNA extraction', values=c('steelblue','coral2'))
+
+extractions_over_time %>% #Barplots of percentage of extraction success depending on the years between collection and DNA extraction, with regression line and SE
+  count(Extraction_success, Storage, Extraction_made_years_after_collection) %>%    
+  group_by(Extraction_made_years_after_collection, Storage) %>%
+  mutate(pct= prop.table(n) * 100) %>%
+  ggplot() + aes(Extraction_made_years_after_collection, pct, fill=Extraction_success) +
+  geom_bar(stat="identity") +
+  geom_col() +
+  geom_smooth(aes(x = Extraction_made_years_after_collection, y = pct, color = Extraction_success),
+              method = "lm", se = TRUE, size = 2) +
+  facet_grid(. ~ Storage) +
+  xlab('Years between collection and DNA extraction') +
+  ylab('Percentage of extractions') +
+  scale_fill_manual('DNA extraction', values = c('steelblue', 'coral2')) +
+  scale_color_manual('DNA extraction', values = c('turquoise', 'red4'))
+
+extractions_over_time %>% #Barplots of percentage of extraction success depending on the months between collection and DNA extraction, with regression line and SE
+  count(Extraction_success, Storage, Extraction_made_months_after_collection) %>%    
+  group_by(Extraction_made_months_after_collection, Storage) %>%
+  mutate(pct= prop.table(n) * 100) %>%
+  ggplot() + aes(Extraction_made_months_after_collection, pct, fill=Extraction_success) +
+  geom_bar(stat="identity") +
+  geom_col() +
+  geom_smooth(aes(x = Extraction_made_months_after_collection, y = pct, color = Extraction_success),
+              method = "lm", se = TRUE, size = 2) +
+  facet_grid(. ~ Storage) +
+  xlab('Months between collection and DNA extraction') +
+  ylab('Percentage of extractions') +
+  scale_fill_manual('DNA extraction', values = c('steelblue', 'coral2')) +
+  scale_color_manual('DNA extraction', values = c('turquoise', 'red4'))
+```
+```{r}
+#generalized linear model of extraction success depending on the time (in months and years) and storage method, and the interaction between both.
+full <- glmer(Extraction_success_bin~Extraction_made_years_after_collection*Storage+Extraction_made_months_after_collection*Storage+(1|Species), family = binomial, data=extractions_over_time)
+summary(full)
+```
+```{r}
+#test assumptions for glmer
+testDispersion(full)
+testUniformity(full)
+testOutliers(full)
+simulationOutput <- simulateResiduals(fittedModel = full, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+```
