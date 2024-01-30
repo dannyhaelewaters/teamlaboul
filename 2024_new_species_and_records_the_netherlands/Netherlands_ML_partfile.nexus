@@ -1,0 +1,9 @@
+#nexus
+begin sets;
+  	CHARSET ITS1 = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 1-341;
+	CHARSET 5.8S = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 342-484;
+  	CHARSET ITS2 = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 485-781;
+	CHARSET LSU = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 782-1759;
+	CHARSET SSU = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 1760-2291;
+	CHARSET TEF1 = Netherlands_ITS_LSU_SSU_TEF_conc.nexus: 2292-2923;
+end;
