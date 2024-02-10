@@ -52,8 +52,13 @@ ORDER BY `Laboul infection count` DESC;
 -- updating Male as M for Sex column
 UPDATE BatflyData
 SET `Sex` = 'M'
-WHERE
-    `Sex` = 'Male';
+WHERE `Sex` = 'Male';
+
+-- calculating the counts of infected v uninfected batflies
+SELECT `Laboul infection?`, COUNT(`Laboul infection?`) AS `Laboul infection count`
+FROM BatflyData
+WHERE `Laboul infection?` = 'infected' OR `Laboul infection?` = 'uninfected' -- this is fine if we only want to focus on the infected and uninfected
+GROUP BY `Laboul infection?`; -- where will filter first, and then we use group by
 
 
 
