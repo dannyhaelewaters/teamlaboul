@@ -8,9 +8,7 @@ USE Batfly;
 -- showing columns
 SHOW COLUMNS FROM BatflyData;
 
--- viewing all infected bat flies
-SELECT `unique 3T identifier` FROM BatflyData
-WHERE `Laboul infection?` = 'infected';
+
 
 -- viewing bat family distinct
 SELECT DISTINCT `Bat species` FROM BatflyData;
@@ -41,6 +39,9 @@ WHERE `Laboul infection?` = 'infected'
 GROUP BY  Country
 ORDER BY `Laboul infection count` DESC;
 
+-- how many countries have batflies in general
+SELECT DISTINCT Country AS `Country count`
+FROM BatflyData;
 
 -- How many infected batflies were male or female
 SELECT `Sex`, COUNT(`Laboul infection?`) AS `Laboul infection count`
@@ -60,5 +61,9 @@ FROM BatflyData
 WHERE `Laboul infection?` = 'infected' OR `Laboul infection?` = 'uninfected' -- this is fine if we only want to focus on the infected and uninfected
 GROUP BY `Laboul infection?`; -- where will filter first, and then we use group by
 
-
-
+-- number of infected bat flies in climate zone
+SELECT `Climate zone`, COUNT(`Laboul infection?`) AS `Laboul infection count`
+FROM BatflyData
+WHERE `Laboul infection?` = 'infected'
+GROUP BY `Climate zone`
+ORDER BY `Laboul infection count` DESC;
