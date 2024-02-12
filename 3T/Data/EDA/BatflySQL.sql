@@ -67,3 +67,23 @@ FROM BatflyData
 WHERE `Laboul infection?` = 'infected'
 GROUP BY `Climate zone`
 ORDER BY `Laboul infection count` DESC;
+
+-- counts of infected batflies in each country
+SELECT Country, COUNT(`Laboul infection?`) AS `Laboul infection count`
+FROM BatflyData
+WHERE `Laboul infection?` = 'infected'
+GROUP BY Country
+ORDER BY `Laboul infection count` DESC;
+
+-- number of infected batflies found on a yearly basis
+SELECT Year, COUNT(`Laboul infection?`) AS `Laboul infection count`
+FROM BatflyData
+WHERE `Laboul infection?` = 'infected'
+GROUP BY Year
+ORDER BY Year DESC;
+
+
+-- select the records that are in France
+SELECT *
+FROM BatflyData
+WHERE Country = 'France';
