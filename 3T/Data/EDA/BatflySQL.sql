@@ -14,23 +14,24 @@ SHOW COLUMNS FROM BatflyData;
 SELECT DISTINCT `Bat species` FROM BatflyData;
 
 -- viewing infected batflies from laboul infection? column
-SELECT DISTINCT Country, `Bat species`, `Laboul infection?`
+SELECT DISTINCT Country, `Bat species`, `Bat fly species`, `Laboul infection?`
 FROM BatflyData
 WHERE `Laboul infection?` = 'infected';
 
 -- obtaining valuecounts of each batfly species that infected with laboul
-SELECT `Bat species`, COUNT(`Laboul infection?`) AS `Laboul infection count`
+SELECT `Bat fly species`, COUNT(`Laboul infection?`) AS `Laboul infection count`
 FROM BatflyData
 WHERE `Laboul infection?` = 'infected'
-GROUP BY `Bat species`
+GROUP BY `Bat fly species`
 ORDER BY `Laboul infection count` DESC;
 
 -- Obtaining countries of each batfly species that are infected
-SELECT Country, `Bat species`, COUNT(`Laboul infection?`) AS `Laboul infection count`
+SELECT Country, `Bat fly species`, COUNT(`Laboul infection?`) AS `Laboul infection count`
 FROM BatflyData
 WHERE `Laboul infection?` = 'infected'
-GROUP BY `Bat species`, Country
+GROUP BY `Bat fly species`, Country
 ORDER BY `Laboul infection count` DESC;
+
 
 -- how many infected batflies within a country
 SELECT Country, COUNT(`Laboul infection?`) AS `Laboul infection count`
@@ -79,6 +80,7 @@ ORDER BY `Laboul infection count` DESC;
 SELECT Year, COUNT(`Laboul infection?`) AS `Laboul infection count`
 FROM BatflyData
 WHERE `Laboul infection?` = 'infected'
+
 GROUP BY Year
 ORDER BY Year DESC;
 
@@ -87,3 +89,15 @@ ORDER BY Year DESC;
 SELECT *
 FROM BatflyData
 WHERE Country = 'France';
+
+
+SELECT Year, COUNT(Year) AS `Laboul infection count`
+FROM BatflyData
+GROUP BY Year
+ORDER BY Year DESC;
+
+-- number of total batflies found on a country
+SELECT Country, COUNT(`Country`) AS `Batfly count`
+FROM BatflyData
+GROUP BY Country
+ORDER BY `Batfly count` DESC;
