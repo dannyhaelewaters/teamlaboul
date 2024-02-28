@@ -11,9 +11,6 @@ from sqlalchemy.orm import Session
 print('Inserting rows...')
 
 # create the session
-session = Base.metadata.create_all(bind = engine)
-
-# create the session
 session = Session(bind = engine)
 
 # read the csv
