@@ -10,7 +10,7 @@ class EpoUtils:
     A utility class for working with eponyms and species data.
     """
 
-    def __init__(self, name, email, db):
+    def __init__(self, email, db):
         """
         Initializes an instance of the EpoUtils class.
 
@@ -18,9 +18,32 @@ class EpoUtils:
         :param email: The email of the user.
         :param db: The database to search for articles.
         """
-        self.name = name
         self.email = email
         self.db = db
+
+    def search_species(self, species_name: str):
+        if self.email:
+            Entrez.email = self.email
+        else:
+            print("Email environment variable not set.")
+
+        handle = Entrez.esearch(db="taxonomy", term=species_name)
+        record = Entrez.read(handle)
+        handle.close()
+
+        return record
+
+    def fetch_species_data(self, taxon_id: int):
+
+        if self.email:
+            Entrez.email = self.email
+        else:
+            print("Email environment variable not set.")
+
+        handle = Entrez.efetch(db="taxonomy", id=taxon_id, retmode="xml")
+        record = Entrez.read(handle)
+        handle.close()
+        return record
 
     def verify_species(self, species_name: str):
         """
@@ -29,10 +52,25 @@ class EpoUtils:
         :param species_name: The name of the species to verify.
         :return: None
         """
+        # let user know that we are searching
+        print("searching....")
+        search_result = self.search_species(species_name)
 
-        # Add your code here to verify the species name
+        # return the search result
+        print("search result")
+        print(search_result)
 
-        pass
+        if int(search_result["Count"]) > 0:
+            taxon_id = search_result["IdList"][
+                0
+            ]  # Get the taxonomic ID of the first result
+            species_data = self.fetch_species_data(taxon_id)
+            print(
+                species_data, width=5, compact=True
+            )  # Set the width parameter to control the text wrapping
+            print(f"Verified species: {species_name}", width=5, compact=True)
+        else:
+            print("Species not found.", width=5, compact=True)
 
     def search_articles(self, species_name: str, max_results: int = 5):
 
@@ -118,10 +156,44 @@ class EpoUtils:
             AttributeError: If the given location is not a valid geographic location.
 
         """
+
+        @staticmethod
+        def is_continent(name):
+            """checks if a continent"""
+            continents = [
+                "Africa",
+                "Antarctica",
+                "Asia",
+                "Europe",
+                "North America",
+                "Oceania",
+                "South America",
+            ]
+
+            if name in continents:
+                return True
+            else:
+                return False
+
         try:
-            # attempts to get a country name
-            location = pycountry.countries.get(name=location)
-            print(f"{location} is a valid geographic location.")
-            # if not, does not return
+            if is_continent(
+                location
+            ):  # if this lcoation is a continent, we can determine that it's name off of it
+
+                # it is valid
+                print(f"{location} is a valid geographic location.")
+
+                return location
+
+            else:
+                # attempts to get a country name
+                location = pycountry.countries.get(name=location)
+
+                # it is valid
+                print(f"{location} is a valid geographic location.")
+
+                return location
+
         except AttributeError:
             print(f"{location} is not a valid geographic location.")
+            return None
