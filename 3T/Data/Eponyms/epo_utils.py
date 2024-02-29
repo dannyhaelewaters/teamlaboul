@@ -10,7 +10,7 @@ class EpoUtils:
     A utility class for working with eponyms and species data.
     """
 
-    def __init__(self, email, db):
+    def __init__(self, email):
         """
         Initializes an instance of the EpoUtils class.
 
@@ -19,7 +19,6 @@ class EpoUtils:
         :param db: The database to search for articles.
         """
         self.email = email
-        self.db = db
 
     def search_species(self, species_name: str):
         if self.email:
@@ -65,14 +64,12 @@ class EpoUtils:
                 0
             ]  # Get the taxonomic ID of the first result
             species_data = self.fetch_species_data(taxon_id)
-            print(
-                species_data, width=5, compact=True
-            )  # Set the width parameter to control the text wrapping
-            print(f"Verified species: {species_name}", width=5, compact=True)
+            print(species_data)  # Set the width parameter to control the text wrapping
+            print(f"Verified species: {species_name}")
         else:
-            print("Species not found.", width=5, compact=True)
+            print("Species not found.")
 
-    def search_articles(self, species_name: str, max_results: int = 5):
+    def search_articles(self, species_name: str, max_results: int = 5, db="pubmed"):
 
         # email passed in
         email = self.email
@@ -87,7 +84,7 @@ class EpoUtils:
 
         # Search for articles
         print(f"Searching for articles on {species_name}...")
-        handle = Entrez.esearch(db=self.db, term=species_name, retmax=max_results)
+        handle = Entrez.esearch(db=db, term=species_name, retmax=max_results)
 
         # Read the search results
         record = Entrez.read(handle)
@@ -97,7 +94,7 @@ class EpoUtils:
 
         return record
 
-    def return_articles(self, species_name: str, results: int = 5):
+    def return_articles(self, species_name: str, results: int = 5, db="pubmed"):
         """
         Returns the article IDs for a given species name
 
@@ -108,9 +105,7 @@ class EpoUtils:
         """
 
         # Search for articles
-        search_result = self.search_articles(
-            species_name, max_results=results, db=self.db
-        )
+        search_result = self.search_articles(species_name, max_results=results, db=db)
 
         # Check if any articles were found, count greater than 0
         if int(search_result["Count"]) > 0:
@@ -124,7 +119,7 @@ class EpoUtils:
                 print("Article ID:", article_id)
 
             for identifier in search_result["IdList"]:
-                pubmed_entry = Entrez.efetch(db=self.db, id=identifier, retmode="xml")
+                pubmed_entry = Entrez.efetch(db=db, id=identifier, retmode="xml")
                 result = Entrez.read(pubmed_entry)
                 article = result["PubmedArticle"][0]["MedlineCitation"]["Article"]
 

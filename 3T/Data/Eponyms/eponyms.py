@@ -1,9 +1,17 @@
+from epo_utils import EpoUtils
+import os
+import dotenv
 
+# Load the environment variables
+dotenv.load_dotenv()
 
-class Eponym(): 
+email = os.getenv("email")
 
-    def __init__(self, name, description):
-        self.name = name
-        self.description = description
+# Create an instance of the Eponyms class
+epo = EpoUtils("email")
 
-    
+# Verify a species
+epo.verify_species("Harmonia")
+
+# finiid article
+epo.return_articles("homo sampiens")
