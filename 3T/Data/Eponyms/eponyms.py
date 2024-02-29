@@ -11,7 +11,7 @@ email = os.getenv("email")
 epo = EpoUtils("email")
 
 # Verify a species
-epo.verify_species("Harmonia")
+epo.verify_species("gyrophaena")
 
-# finiid article
-epo.return_articles("homo sampiens")
+# find article
+epo.return_articles("gyrophaena", results=5)

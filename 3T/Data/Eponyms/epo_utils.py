@@ -56,15 +56,15 @@ class EpoUtils:
         search_result = self.search_species(species_name)
 
         # return the search result
-        print("search result")
-        print(search_result)
+        # print("search result")
+        # print(search_result)
 
         if int(search_result["Count"]) > 0:
             taxon_id = search_result["IdList"][
                 0
             ]  # Get the taxonomic ID of the first result
             species_data = self.fetch_species_data(taxon_id)
-            print(species_data)  # Set the width parameter to control the text wrapping
+            # print(species_data)  # Set the width parameter to control the text wrapping
             print(f"Verified species: {species_name}")
         else:
             print("Species not found.")
@@ -94,7 +94,7 @@ class EpoUtils:
 
         return record
 
-    def return_articles(self, species_name: str, results: int = 5, db="pubmed"):
+    def return_articles(self, species_name: str, results: int = 1, db="pubmed"):
         """
         Returns the article IDs for a given species name
 
@@ -110,7 +110,7 @@ class EpoUtils:
         # Check if any articles were found, count greater than 0
         if int(search_result["Count"]) > 0:
             print(f"Found {search_result['Count']} articles on {species_name}.")
-            print("printing...")
+            print(f"printing {results} article(s)...")
 
             article_ids = search_result["IdList"]  # Get the list of article IDs
 
