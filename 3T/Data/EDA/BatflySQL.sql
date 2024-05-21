@@ -8,7 +8,14 @@ USE Batfly;
 -- showing columns
 SHOW COLUMNS FROM BatflyData;
 
+SELECT * FROM BatflyData;
 
+-- quick example:
+-- all Carollia perspicillata from Panama
+SELECT COUNT(`Bat species`) AS `Carollia perspicillata count`
+FROM BatflyData
+WHERE `Bat species` = 'Carollia perspicillata'
+  AND Country = 'Panama';
 
 -- viewing bat family distinct
 SELECT DISTINCT `Bat species` FROM BatflyData;
@@ -80,7 +87,6 @@ ORDER BY `Laboul infection count` DESC;
 SELECT Year, COUNT(`Laboul infection?`) AS `Laboul infection count`
 FROM BatflyData
 WHERE `Laboul infection?` = 'infected'
-
 GROUP BY Year
 ORDER BY Year DESC;
 
