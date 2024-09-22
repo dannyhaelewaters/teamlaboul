@@ -1,0 +1,849 @@
+IQ-TREE multicore version 1.6.12 for Windows 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    Warrie (AVX512, FMA3, 27 GB RAM)
+Command: iqtree -s Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus -spp Hesperomyces_conc_partfile2.nexus -m MFP -AICc -bb 1000
+Seed:    121293 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sat Sep 21 14:25:38 2024
+Kernel:  AVX+FMA - 1 threads (16 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 16 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file Hesperomyces_conc_partfile2.nexus ...
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 5 partitions...
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading alignment file Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus ... Nexus format detected
+Skipping unknown block (SETS)...
+Alignment has 47 sequences with 2361 columns, 654 distinct patterns
+490 parsimony-informative, 93 singleton sites, 1778 constant sites
+WARNING: Some sequence names are changed as follows:
+DH1193g Hesperomyces ex Adalia bipunctata -> DH1193g_Hesperomyces_ex_Adalia_bipunctata
+DH1199h Hesperomyces ex Adalia bipunctata -> DH1199h_Hesperomyces_ex_Adalia_bipunctata
+DH1200h Hesperomyces ex Olla v-nigrum -> DH1200h_Hesperomyces_ex_Olla_v-nigrum
+DH1231a Hesperomyces ex Adalia bipunctata -> DH1231a_Hesperomyces_ex_Adalia_bipunctata
+DH1248b Hesperomyces ex Adalia decempunctata -> DH1248b_Hesperomyces_ex_Adalia_decempunctata
+DH1249a Hesperomyces ex Adalia decempunctata -> DH1249a_Hesperomyces_ex_Adalia_decempunctata
+DH1250c Hesperomyces ex Psyllobora vigintimaculata -> DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1251b Hesperomyces ex Psyllobora vigintimaculata -> DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata
+DH1259a Hesperomyces ex Cheilomenes propinqua -> DH1259a_Hesperomyces_ex_Cheilomenes_propinqua
+DH1268b Hesperomyces harmoniae -> DH1268b_Hesperomyces_harmoniae
+DH1287b Hesperomyces coleomegillae -> DH1287b_Hesperomyces_coleomegillae
+DH1291c Hesperomyces coleomegillae -> DH1291c_Hesperomyces_coleomegillae
+DH1374a Hesperomyces ex Cycloneda sanguinea -> DH1374a_Hesperomyces_ex_Cycloneda_sanguinea
+DH1428a Hesperomyces coccinelloides -> DH1428a_Hesperomyces_coccinelloides
+DH1428b Hesperomyces coccinelloides -> DH1428b_Hesperomyces_coccinelloides
+DH1439a Hesperomyces harmoniae -> DH1439a_Hesperomyces_harmoniae
+DH1444a Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1444b Hesperomyces virescens s.s. ex Chilocorus stigma -> DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma
+DH1462a Hesperomyces parexochomi -> DH1462a_Hesperomyces_parexochomi
+DH1465a Hesperomyces parexochomi -> DH1465a_Hesperomyces_parexochomi
+DH1465b Hesperomyces parexochomi -> DH1465b_Hesperomyces_parexochomi
+DH1584a Hesperomyces parexochomi -> DH1584a_Hesperomyces_parexochomi
+DH1690d Hesperomyces parexochomi -> DH1690d_Hesperomyces_parexochomi
+DH1691c Hesperomyces parexochomi -> DH1691c_Hesperomyces_parexochomi
+DH1809c Hesperomyces ex Hippodamia variegata -> DH1809c_Hesperomyces_ex_Hippodamia_variegata
+DH3187a Hesperomyces ex Hippodamia tredecimpunctata -> DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata
+DH3202a Hesperomyces ex Olla v-nigrum -> DH3202a_Hesperomyces_ex_Olla_v-nigrum
+DH3939b Hesperomyces ex Hyperaspis vinciguerrae -> DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH3939c Hesperomyces ex Hyperaspis vinciguerrae -> DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae
+DH4049a Hesperomyces cf chilocori-bipustulati -> DH4049a_Hesperomyces_cf_chilocori-bipustulati
+DH4209a Hesperomyces halyziae -> DH4209a_Hesperomyces_halyziae
+DH4343b Hesperomyces coccinellae-transversalis -> DH4343b_Hesperomyces_coccinellae-transversalis
+DH4344a Hesperomyces coccinellae-transversalis -> DH4344a_Hesperomyces_coccinellae-transversalis
+DH4345b Hesperomyces coccinellae-transversalis -> DH4345b_Hesperomyces_coccinellae-transversalis
+DH4693a Hesperomyces chilocori-bipustulati -> DH4693a_Hesperomyces_chilocori-bipustulati
+DH4695b Hesperomyces chilocori-bipustulati -> DH4695b_Hesperomyces_chilocori-bipustulati
+DH4696a Hesperomyces chilocori-bipustulati -> DH4696a_Hesperomyces_chilocori-bipustulati
+DH4698a Hesperomyces chilocori-bipustulati -> DH4698a_Hesperomyces_chilocori-bipustulati
+DH4699a Hesperomyces chilocori-bipustulati -> DH4699a_Hesperomyces_chilocori-bipustulati
+DH4879a Hesperomyces chilocori-bipustulati -> DH4879a_Hesperomyces_chilocori-bipustulati
+DH4880a Hesperomyces chilocori-bipustulati -> DH4880a_Hesperomyces_chilocori-bipustulati
+DH655c Hesperomyces ex Cheilomenes propinqua -> DH655c_Hesperomyces_ex_Cheilomenes_propinqua
+DH659b Hesperomyces ex Cheilomenes propinqua -> DH659b_Hesperomyces_ex_Cheilomenes_propinqua
+DH924a Hesperomyces ex Cycloneda sanguinea -> DH924a_Hesperomyces_ex_Cycloneda_sanguinea
+DH928g Hesperomyces ex Azya orbigera -> DH928g_Hesperomyces_ex_Azya_orbigera
+DH954e Hesperomyces ex Olla v-nigrum -> DH954e_Hesperomyces_ex_Olla_v-nigrum
+DH955b Hesperomyces halyziae -> DH955b_Hesperomyces_halyziae
+
+                                                          Gap/Ambiguity  Composition  p-value
+   1  DH1193g_Hesperomyces_ex_Adalia_bipunctata                   4.74%    passed     27.31%
+   2  DH1199h_Hesperomyces_ex_Adalia_bipunctata                  35.71%    passed     36.56%
+   3  DH1200h_Hesperomyces_ex_Olla_v-nigrum                       9.32%    passed     37.61%
+   4  DH1231a_Hesperomyces_ex_Adalia_bipunctata                   5.72%    passed     41.27%
+   5  DH1248b_Hesperomyces_ex_Adalia_decempunctata               30.03%    passed     68.08%
+   6  DH1249a_Hesperomyces_ex_Adalia_decempunctata               71.28%    failed      1.01%
+   7  DH1250c_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     13.50%
+   8  DH1251b_Hesperomyces_ex_Psyllobora_vigintimaculata          3.90%    passed     14.00%
+   9  DH1259a_Hesperomyces_ex_Cheilomenes_propinqua              67.51%    failed      0.17%
+  10  DH1268b_Hesperomyces_harmoniae                              3.52%    passed     32.10%
+  11  DH1287b_Hesperomyces_coleomegillae                         32.11%    passed     63.21%
+  12  DH1291c_Hesperomyces_coleomegillae                         37.27%    passed     37.73%
+  13  DH1374a_Hesperomyces_ex_Cycloneda_sanguinea                77.42%    failed      4.72%
+  14  DH1428a_Hesperomyces_coccinelloides                         2.71%    failed      1.94%
+  15  DH1428b_Hesperomyces_coccinelloides                        42.27%    failed      3.21%
+  16  DH1439a_Hesperomyces_harmoniae                             29.86%    passed     61.88%
+  17  DH1444a_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   35.66%    passed     49.54%
+  18  DH1444b_Hesperomyces_virescens_s.s._ex_Chilocorus_stigma   32.83%    passed     62.93%
+  19  DH1462a_Hesperomyces_parexochomi                           67.26%    failed      0.71%
+  20  DH1465a_Hesperomyces_parexochomi                            3.56%    passed     47.88%
+  21  DH1465b_Hesperomyces_parexochomi                            3.52%    passed     42.62%
+  22  DH1584a_Hesperomyces_parexochomi                           29.86%    passed     53.12%
+  23  DH1690d_Hesperomyces_parexochomi                            3.52%    passed     39.92%
+  24  DH1691c_Hesperomyces_parexochomi                            4.83%    passed     48.25%
+  25  DH1809c_Hesperomyces_ex_Hippodamia_variegata               63.70%    failed      3.08%
+  26  DH3187a_Hesperomyces_ex_Hippodamia_tredecimpunctata        30.66%    passed     93.60%
+  27  DH3202a_Hesperomyces_ex_Olla_v-nigrum                      30.28%    passed     50.12%
+  28  DH3939b_Hesperomyces_ex_Hyperaspis_vinciguerrae            36.21%    failed      0.02%
+  29  DH3939c_Hesperomyces_ex_Hyperaspis_vinciguerrae             7.71%    passed     19.84%
+  30  DH4049a_Hesperomyces_cf_chilocori-bipustulati              33.63%    passed     41.94%
+  31  DH4209a_Hesperomyces_halyziae                              34.10%    passed     26.77%
+  32  DH4343b_Hesperomyces_coccinellae-transversalis             63.83%    passed     23.63%
+  33  DH4344a_Hesperomyces_coccinellae-transversalis             63.91%    passed     25.87%
+  34  DH4345b_Hesperomyces_coccinellae-transversalis             21.69%    passed     59.78%
+  35  DH4693a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  36  DH4695b_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  37  DH4696a_Hesperomyces_chilocori-bipustulati                 22.62%    passed     56.11%
+  38  DH4698a_Hesperomyces_chilocori-bipustulati                 22.70%    passed     60.94%
+  39  DH4699a_Hesperomyces_chilocori-bipustulati                 77.85%    passed     52.21%
+  40  DH4879a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  41  DH4880a_Hesperomyces_chilocori-bipustulati                 49.00%    passed      6.39%
+  42  DH655c_Hesperomyces_ex_Cheilomenes_propinqua               47.86%    passed     10.54%
+  43  DH659b_Hesperomyces_ex_Cheilomenes_propinqua               44.85%    passed     19.79%
+  44  DH924a_Hesperomyces_ex_Cycloneda_sanguinea                 71.16%    failed      4.06%
+  45  DH928g_Hesperomyces_ex_Azya_orbigera                       50.53%    passed     28.04%
+  46  DH954e_Hesperomyces_ex_Olla_v-nigrum                       70.99%    failed      1.14%
+  47  DH955b_Hesperomyces_halyziae                               70.56%    failed      0.26%
+WARNING: 12 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                      35.03%  11 sequences failed composition chi2 test (p-value<5%; df=3)
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		43	415	176	214	MFP	ITS1
+2		44	158	9	149	MFP	58S
+3		42	272	134	125	MFP	ITS2
+4		39	894	84	767	MFP	LSU
+5		19	622	87	523	MFP	MCM7
+Degree of missing data: 0.253
+Info: multi-threading strategy over partitions
+
+NOTE: DH4695b_Hesperomyces_chilocori-bipustulati is identical to DH4693a_Hesperomyces_chilocori-bipustulati but kept for subsequent analysis
+NOTE: DH4880a_Hesperomyces_chilocori-bipustulati is identical to DH4879a_Hesperomyces_chilocori-bipustulati but kept for subsequent analysis
+NOTE: 1 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: DH4696a_Hesperomyces_chilocori-bipustulati (identical to DH4693a_Hesperomyces_chilocori-bipustulati) is ignored but added at the end
+Concatenated alignment was printed to Hesperomyces_conc_partfile2.nexus.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to Hesperomyces_conc_partfile2.nexus.uniqueseq.phy
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.005 seconds
+NOTE: ModelFinder requires 11 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -8174.128 / df: 98 / AIC: 16544.256 / AICc: 16552.835 / BIC: 17109.407
+Selecting individual models for 5 charsets using AICc...
+ No. Model        Score       Charset
+   1 TPM2+F+G4    4358.959    ITS1
+   2 TNe          575.243     58S
+   3 GTR+F+G4     3412.669    ITS2
+   4 TIM+F+G4     4560.723    LSU
+   5 TIM3e+G4     2896.484    MCM7
+Full partition model AICc score: 15991.730 (LnL: -7868.272  df:121)
+Partition information was printed to Hesperomyces_conc_partfile2.nexus.best_scheme.nex
+Partition information in Raxml format was printed to Hesperomyces_conc_partfile2.nexus.best_scheme
+
+All model information printed to Hesperomyces_conc_partfile2.nexus.model.gz
+CPU time for ModelFinder: 3.438 seconds (0h:0m:3s)
+Wall-clock time for ModelFinder: 3.743 seconds (0h:0m:3s)
+Generating 1000 samples for ultrafast bootstrap (seed: 121293)...
+
+NOTE: 5 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -8524.105
+Current log-likelihood at step 1: -7924.453
+Current log-likelihood at step 2: -7880.100
+Current log-likelihood at step 3: -7877.097
+Current log-likelihood at step 4: -7875.703
+Current log-likelihood at step 5: -7874.686
+Current log-likelihood at step 6: -7873.792
+Current log-likelihood at step 7: -7873.001
+Current log-likelihood at step 8: -7872.293
+Current log-likelihood at step 9: -7871.656
+Current log-likelihood at step 10: -7871.074
+Current log-likelihood at step 11: -7870.552
+Current log-likelihood at step 12: -7870.083
+Current log-likelihood at step 13: -7869.642
+Current log-likelihood at step 14: -7869.233
+Current log-likelihood at step 15: -7868.874
+Current log-likelihood at step 16: -7868.545
+Current log-likelihood at step 17: -7868.228
+Current log-likelihood at step 18: -7867.946
+Current log-likelihood at step 19: -7867.687
+Current log-likelihood at step 20: -7867.446
+Current log-likelihood at step 21: -7867.224
+Current log-likelihood at step 22: -7867.025
+Current log-likelihood at step 23: -7866.869
+Current log-likelihood at step 24: -7866.722
+Current log-likelihood at step 25: -7866.582
+Current log-likelihood at step 26: -7866.451
+Current log-likelihood at step 27: -7866.321
+Current log-likelihood at step 28: -7866.204
+Current log-likelihood at step 29: -7866.090
+Current log-likelihood at step 30: -7865.987
+Current log-likelihood at step 31: -7865.889
+Partition-specific rates:  2.640 0.160 2.606 0.318 0.398
+Parameters optimization took 30 rounds (0.648 sec)
+
+Computing ML distances based on estimated model parameters... 0.000 sec
+WARNING: Some pairwise ML distances are too long (saturated)
+Computing BIONJ tree...
+0.020 seconds
+Log-likelihood of BIONJ tree: -8321.000
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.303 second
+Computing log-likelihood of 98 initial trees ... 0.735 seconds
+Current best score: -7861.106
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -7860.601
+Current log-likelihood at step 1: -7860.481
+Current log-likelihood at step 2: -7860.396
+Parameters optimization took 1 rounds (0.037 sec)
+
+BETTER TREE FOUND at iteration 1: -7860.396
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -7860.382
+Current log-likelihood at step 1: -7860.290
+Parameters optimization took 0 rounds (0.017 sec)
+
+UPDATE BEST LOG-LIKELIHOOD: -7860.290
+BETTER TREE FOUND at iteration 3: -7860.283
+UPDATE BEST LOG-LIKELIHOOD: -7860.281
+Iteration 10 / LogL: -7860.287 / Time: 0h:0m:2s
+UPDATE BEST LOG-LIKELIHOOD: -7860.280
+Iteration 20 / LogL: -7860.283 / Time: 0h:0m:3s
+Finish initializing candidate tree set (8)
+Current best tree score: -7860.280 / CPU time: 2.694
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+UPDATE BEST LOG-LIKELIHOOD: -7860.279
+UPDATE BEST LOG-LIKELIHOOD: -7860.279
+UPDATE BEST LOG-LIKELIHOOD: -7860.279
+UPDATE BEST LOG-LIKELIHOOD: -7860.279
+Iteration 30 / LogL: -7860.279 / Time: 0h:0m:4s (0h:0m:11s left)
+UPDATE BEST LOG-LIKELIHOOD: -7860.278
+Iteration 40 / LogL: -7860.279 / Time: 0h:0m:5s (0h:0m:9s left)
+UPDATE BEST LOG-LIKELIHOOD: -7860.278
+Iteration 50 / LogL: -7860.278 / Time: 0h:0m:6s (0h:0m:7s left)
+Log-likelihood cutoff on original alignment: -7888.791
+Iteration 60 / LogL: -7860.281 / Time: 0h:0m:8s (0h:0m:6s left)
+Iteration 70 / LogL: -7860.279 / Time: 0h:0m:9s (0h:0m:4s left)
+UPDATE BEST LOG-LIKELIHOOD: -7860.278
+Iteration 80 / LogL: -7860.731 / Time: 0h:0m:10s (0h:0m:3s left)
+UPDATE BEST LOG-LIKELIHOOD: -7860.276
+Iteration 90 / LogL: -7945.453 / Time: 0h:0m:11s (0h:0m:1s left)
+UPDATE BEST LOG-LIKELIHOOD: -7860.275
+Iteration 100 / LogL: -7860.279 / Time: 0h:0m:13s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -7889.273
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.995
+TREE SEARCH COMPLETED AFTER 104 ITERATIONS / Time: 0h:0m:13s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -7860.275
+Current log-likelihood at step 1: -7860.182
+Current log-likelihood at step 2: -7860.098
+Current log-likelihood at step 3: -7860.017
+Current log-likelihood at step 4: -7859.940
+Current log-likelihood at step 5: -7859.869
+Current log-likelihood at step 6: -7859.803
+Current log-likelihood at step 7: -7859.738
+Current log-likelihood at step 8: -7859.676
+Current log-likelihood at step 9: -7859.619
+Current log-likelihood at step 10: -7859.562
+Current log-likelihood at step 11: -7859.512
+Current log-likelihood at step 12: -7859.464
+Current log-likelihood at step 13: -7859.419
+Current log-likelihood at step 14: -7859.377
+Current log-likelihood at step 15: -7859.337
+Current log-likelihood at step 16: -7859.300
+Current log-likelihood at step 17: -7859.264
+Current log-likelihood at step 18: -7859.231
+Current log-likelihood at step 19: -7859.199
+Current log-likelihood at step 20: -7859.169
+Current log-likelihood at step 21: -7859.140
+Current log-likelihood at step 22: -7859.113
+Current log-likelihood at step 23: -7859.085
+Current log-likelihood at step 24: -7859.061
+Current log-likelihood at step 25: -7859.039
+Current log-likelihood at step 26: -7859.018
+Current log-likelihood at step 27: -7858.998
+Current log-likelihood at step 28: -7858.981
+Current log-likelihood at step 29: -7858.965
+Current log-likelihood at step 30: -7858.949
+Current log-likelihood at step 31: -7858.934
+Current log-likelihood at step 32: -7858.920
+Current log-likelihood at step 33: -7858.906
+Current log-likelihood at step 34: -7858.891
+Current log-likelihood at step 35: -7858.878
+Current log-likelihood at step 36: -7858.866
+Current log-likelihood at step 37: -7858.855
+Current log-likelihood at step 38: -7858.840
+Current log-likelihood at step 39: -7858.829
+Current log-likelihood at step 40: -7858.819
+Current log-likelihood at step 41: -7858.809
+Partition-specific rates:  2.647 0.110 2.627 0.315 0.400
+Parameters optimization took 40 rounds (0.692 sec)
+
+BEST SCORE FOUND : -7858.809
+Creating bootstrap support values...
+Split supports printed to NEXUS file Hesperomyces_conc_partfile2.nexus.splits.nex
+Total tree length: 0.736
+
+Total number of iterations: 104
+CPU time used for tree search: 12.094 sec (0h:0m:12s)
+Wall-clock time used for tree search: 12.967 sec (0h:0m:12s)
+Total CPU time used: 12.562 sec (0h:0m:12s)
+Total wall-clock time used: 14.582 sec (0h:0m:14s)
+
+Computing bootstrap consensus tree...
+Reading input file Hesperomyces_conc_partfile2.nexus.splits.nex...
+46 taxa and 267 splits.
+Consensus tree written to Hesperomyces_conc_partfile2.nexus.contree
+Reading input trees file Hesperomyces_conc_partfile2.nexus.contree
+Log-likelihood of consensus tree: -7858.795
+
+Analysis results written to: 
+  IQ-TREE report:                Hesperomyces_conc_partfile2.nexus.iqtree
+  Maximum-likelihood tree:       Hesperomyces_conc_partfile2.nexus.treefile
+  Likelihood distances:          Hesperomyces_conc_partfile2.nexus.mldist
+  Best partitioning scheme:      Hesperomyces_conc_partfile2.nexus.best_scheme.nex
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          Hesperomyces_conc_partfile2.nexus.splits.nex
+  Consensus tree:                Hesperomyces_conc_partfile2.nexus.contree
+  Screen log file:               Hesperomyces_conc_partfile2.nexus.log
+
+Date and Time: Sat Sep 21 14:25:58 2024
