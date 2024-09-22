@@ -1,8 +1,0 @@
-#nexus
-begin sets;
-	CHARSET ITS1 = Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus: 1-415;
-	CHARSET 58S = Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus: 416-573;
-	CHARSET ITS2 = Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus: 574-845;
-	CHARSET LSU = Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus: 846-1739;
-	CHARSET MCM7 = Hesperomyces_conc_ITS_LSU_MCM7_final2.nexus: 1740-2361;
-end;
