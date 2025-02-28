@@ -5,7 +5,7 @@ library(broom)
 library(gt)
 
 # Load the dataset
-data <- read.csv("average_thalli_per_group_per_day_v2.csv")
+data <- read.csv("average_thalli_per_group_per_day.csv")
 
 # Convert the Date column to Date type
 data$Date <- as.Date(data$Date)
