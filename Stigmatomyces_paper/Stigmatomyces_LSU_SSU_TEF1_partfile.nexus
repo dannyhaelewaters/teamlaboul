@@ -1,0 +1,8 @@
+#nexus
+begin sets;
+	CHARSET LSU = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 1-1019;
+	CHARSET SSU = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 1020-2776;
+	CHARSET TEF1.1 = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 2777-3393\3;
+	CHARSET TEF1.2 = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 2778-3393\3;
+	CHARSET TEF1.3 = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 2779-3393\3;
+end;
