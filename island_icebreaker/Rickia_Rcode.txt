@@ -1,0 +1,48 @@
+---
+title: "PCA Rickia zanetti"
+output: html_document
+date: "2024-09-28"
+---
+
+```{r setup, include=FALSE}
+library(readxl)   # For reading Excel files
+library(dplyr)    # For data manipulation
+library(tidyr)    # For data tidying
+library(ggplot2)  # For plotting
+library(factoextra) # For visualizing PCA
+library(cluster)   # For clustering methods
+```
+
+```{r}
+data_r <- read_excel(".../Rickia_measurements.xlsx", sheet = 1)
+```
+
+
+```{r}
+str(data_r)
+a_data_r <- data_r %>% select(-`Thallus #`, -Mag)
+str(a_data_r)
+```
+
+```{r}
+data_cleaned_r <- na.omit(a_data_r)
+data_cleaned_r$Species <- as.factor(data_cleaned_r$Species)
+numeric_data_r <- data_cleaned_r %>% select(where(is.numeric))
+#View(numeric_data_r)
+cor_matrix_r <- cor(numeric_data_r, use = "pairwise.complete.obs")
+pca_result_r <- prcomp(numeric_data_r, center = TRUE, scale. = TRUE)
+```
+
+```{r}
+plot1 <- fviz_pca_ind(pca_result_r, 
+              geom.ind = "point", 
+              col.ind = data_cleaned_r$Species, # Color by species
+              palette = "jco", # Color palette
+              addEllipses = TRUE,ellipse.level=0.95, # Add ellipses
+              legend.title = "Species") +
+  #geom_text(aes(label = data_cleaned$Slide), size = 3, vjust = 1.5) + # Add species labels
+  ggtitle("PCA Comparison of Rickia huggertii and R. zanettii")
+
+plot1
+```
+

@@ -1,0 +1,328 @@
+---
+title: "Iceland paper Laboulbenia notiophili"
+output: html_notebook
+---
+
+```{r}
+#install.packages(c("readxl", "dplyr", "tidyr", "ggplot2", "factoextra", "cluster", "lmerTest", "DHARMa"))
+```
+
+```{r}
+library(readxl)   # For reading Excel files
+library(dplyr)    # For data manipulation
+library(tidyr)    # For data tidying
+library(ggplot2)  # For plotting
+library(factoextra) # For visualizing PCA
+library(cluster)   # For clustering methods
+library(vegan)
+library(car)
+```
+
+```{r}
+data <- read_excel("C:/Users/wawy/Downloads/Measurements + SVG/Laboulbenia_notiophili.xlsx", sheet = 1)
+```
+
+```{r}
+# Step 3: Remove missing values
+
+data_cleaned_1 <- data[, -c(3,4,6,7, 41)]
+data_cleaned_1 <- na.omit(data_cleaned_1)
+# Step 4: Convert the species column to a factor if it's not already
+data_cleaned_1$Species <- as.factor(data_cleaned_1$Species)
+data_cleaned_1$Clade <- as.factor(data_cleaned_1$Clade)
+```
+
+```{r}
+# Step 5: Create a correlation matrix for the numeric data
+numeric_data <- data_cleaned_1 %>% select(where(is.numeric))
+#View(numeric_data)
+cor_matrix <- cor(numeric_data, use = "pairwise.complete.obs")
+```
+
+```{r}
+# Step 6: Perform PCA
+pca_result <- prcomp(numeric_data, center = TRUE, scale. = TRUE)
+
+# Step 7: Visualize the PCA results
+# Plot the PCA results
+plot1 <- fviz_pca_ind(pca_result, 
+              geom.ind = "point", 
+              col.ind = data_cleaned_1$Species, # Color by species
+              palette = "jco", # Color palette
+              addEllipses = TRUE,ellipse.level=0.80, # Add ellipses
+              legend.title = "Species") +
+  #geom_text(aes(label = data_cleaned_1$Slide), size = 3, vjust = 1.5) + # Add species labels
+  ggtitle("PCA of Laboulbenia notiophili and its host association")
+
+# Step 7: Visualize the PCA results
+# Plot the PCA results
+plot2 <- fviz_pca_ind(pca_result, 
+              geom.ind = "point",
+              habillage = data_cleaned_1$Clade,
+              col.ind = data_cleaned_1$Species, # Color by species
+              palette = "jco", # Color palette
+              addEllipses = TRUE, ellipse.type = "convex", # Add ellipses
+              legend.title = "Clade")+
+
+  ggtitle("PCA of Laboulbenia notiophili and its phylogenetic clade")
+
+plot3 <- fviz_pca_biplot(pca_result, 
+                geom.ind = "point",
+                habillage = as.factor(data_cleaned_1$Clade),
+                addEllipses = TRUE, ellipse.type = "convex",
+                legend.title = "Clade",
+                arrowsize = 1.2, # Arrow size
+                select.var = list(contrib = 20), # Show top 3 contributing variables
+                col.var = "black" # Set arrows to black
+) 
+plot1
+plot2
+plot3
+```
+
+```{r}
+# Step 8: Check if the placement of the thallus has a significant effect
+# Plot the PCA results
+shapes <- c(0, 1, 2, 3, 4, 5, 6, 7, 8)
+
+fviz_pca_ind(pca_result, 
+              geom.ind = "point", 
+              col.ind = data_cleaned_1$Placement, # Color by Placement
+              shape.ind = as.numeric(data_cleaned_1$Species), # Assign shapes based on Placement
+              palette = "jco", # Color palette
+              addEllipses = TRUE, # Add ellipses
+              legend.title = "Placement") +
+  scale_shape_manual(values = shapes) +  # Apply custom shapes
+  ggtitle("PCA of Laboulbenia nothiophili by Placement")
+```
+
+```{r}
+# Extract the variable contributions
+var_contrib <- factoextra::get_pca_var(pca_result)$contrib
+
+# Get the top 8 contributing variables for each principal component with descriptive summaries
+top_contributors_summary <- apply(var_contrib, 2, function(x) {
+  # Sort contributions in decreasing order and get the top 8
+  top_vars <- head(sort(x, decreasing = TRUE), 40)
+  # Create a descriptive summary
+  data.frame(
+    #Variable = names(top_vars),
+    Contribution = top_vars,
+    Description = paste("The variable", names(top_vars), 
+                        "contributes", round(top_vars, 2), 
+                        "% to this principal component.")
+  )
+})
+
+# Print the summary of the top contributors with descriptions
+top_contributors_summary
+```
+```{r}
+p<-ggplot(data_cleaned_1, aes(x=Clade, y=Cell_III_L, color=Clade)) +
+  geom_boxplot()
+p + geom_jitter(shape=2, position=position_jitter(0.2))
+
+p<-ggplot(data_cleaned_1, aes(x=Clade, y=Cell_III_W, color=Clade)) +
+  geom_boxplot()
+p + geom_jitter(shape=2, position=position_jitter(0.2))
+
+p<-ggplot(data_cleaned_1, aes(x=Clade, y=Cell_III_ratio, color=Clade)) +
+  geom_boxplot()
+p + geom_jitter(shape=2, position=position_jitter(0.2))
+```
+
+```{r}
+
+data_cleaned_2 <- data[, -c(4,6,7,9,10,11,12,13,15,16,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,42)]
+
+# Step 4: Convert the species column to a factor if it's not already
+data_cleaned_2$Species <- as.factor(data_cleaned_2$Species)
+data_cleaned_2$Clade <- as.factor(data_cleaned_2$Clade)
+
+data_cleaned_final <- na.omit(data_cleaned_2)
+
+# Step 5: Create a correlation matrix for the numeric data
+numeric_data2 <- data_cleaned_final %>% select(where(is.numeric))
+#View(numeric_data)
+cor_matrix <- cor(numeric_data2, use = "pairwise.complete.obs")
+
+# Step 6: Perform PCA
+pca_result2 <- prcomp(log10(numeric_data2), center = TRUE, scale. = TRUE)
+
+# Step 7: Visualize the PCA results
+# Plot the PCA results
+fviz_pca_ind(pca_result2, 
+              geom.ind = "point", 
+              col.ind = data_cleaned_final$Species, # Color by species
+              palette = "jco", # Color palette
+              addEllipses = TRUE,ellipse.level=0.80, # Add ellipses
+              legend.title = "Species") +
+  #geom_text(aes(label = data_cleaned_final$Slide), size = 3, vjust = 1.5) + # Add species labels
+  ggtitle("PCA of Laboulbenia notiophili and its host association")
+
+# Step 7: Visualize the PCA results
+# Plot the PCA results
+fviz_pca_ind(pca_result2, 
+              geom.ind = "point",
+              habillage = data_cleaned_final$Clade,
+              col.ind = data_cleaned_final$Species, # Color by species
+              palette = "jco", # Color palette
+              addEllipses = TRUE, ellipse.type = "convex", # Add ellipses
+              legend.title = "Clade")+
+
+  ggtitle("PCA of Laboulbenia notiophili")
+
+plot4 <- fviz_pca_biplot(pca_result2, 
+                geom.ind = "point",
+                habillage = data_cleaned_final$Clade,
+                addEllipses = TRUE, ellipse.type = "convex",
+                legend.title = "Clade",
+                arrowsize = 1.0, # Arrow size
+                select.var = list(contrib = 5), # Show top 3 contributing variables
+                col.var = "black" # Set arrows to black
+)
+plot4
+
+```
+
+```{r}
+# Extract the variable contributions
+var_contrib <- factoextra::get_pca_var(pca_result2)$contrib
+
+# Get the top 8 contributing variables for each principal component with descriptive summaries
+top_contributors_summary <- apply(var_contrib, 2, function(x) {
+  # Sort contributions in decreasing order and get the top 8
+  top_vars <- head(sort(x, decreasing = TRUE), 40)
+  # Create a descriptive summary
+  data.frame(
+    #Variable = names(top_vars),
+    Contribution = top_vars,
+    Description = paste("The variable", names(top_vars), 
+                        "contributes", round(top_vars, 2), 
+                        "% to this principal component.")
+  )
+})
+
+# Print the summary of the top contributors with descriptions
+top_contributors_summary
+```
+
+```{r}
+library(emmeans)
+library(ggplot2)
+library(DHARMa)
+library(lme4)
+library(lmerTest)
+
+length_boxplot <- ggplot(data_cleaned_final, aes(x=Clade, y=(Cell_II_ratio), col= Clade)) + 
+  geom_boxplot()
+length_boxplot
+
+lm.model1<-lmer((Cell_II_ratio) ~ Clade+(1|Clade:Slide), data=data_cleaned_final)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+
+#assumptions
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+
+emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+means <- emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+
+pwpp(means, type = "response", aes = list(label = list(size = 4))) + geom_point(size = 3) 
+```
+
+```{r}
+length_boxplot <- ggplot(data_cleaned_final, aes(x=Clade, y=log10(Cell_III_ratio), col= Clade)) + 
+  geom_boxplot()
+length_boxplot
+
+lm.model1<-lmer(log10(Cell_III_ratio) ~ Clade+(1|Clade:Slide), data=data_cleaned_final)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+
+#assumptions
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+
+emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+means <- emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+
+pwpp(means, type = "response", aes = list(label = list(size = 4))) + geom_point(size = 3) 
+```
+
+```{r}
+length_boxplot <- ggplot(data_cleaned_final, aes(x=Clade, y=log10(Total_L), col= Clade)) + 
+  geom_boxplot()
+length_boxplot
+
+lm.model1<-lmer(log10(Total_L) ~ Clade+(1|Clade:Slide), data=data_cleaned_final)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+
+#assumptions
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+
+emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+means <- emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+
+pwpp(means, type = "response", aes = list(label = list(size = 4))) + geom_point(size = 3) 
+```
+```{r}
+length_boxplot <- ggplot(data, aes(x=Clade, y=(P_ratio), col= Clade)) + 
+  geom_boxplot()
+length_boxplot
+
+lm.model1<-lmer((P_ratio) ~ Clade+(1|Clade:Slide), data=data)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+
+#assumptions
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+
+emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+means <- emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+
+pwpp(means, type = "response", aes = list(label = list(size = 4))) + geom_point(size = 3) 
+```
+
+```{r}
+length_boxplot <- ggplot(data, aes(x=Clade, y=log10(BC_IA_L), col= Clade)) + 
+  geom_boxplot()
+length_boxplot
+
+lm.model1<-lmer(log10(BC_IA_L) ~ Clade+(1|Clade:Slide), data=data)
+summary(lm.model1)
+anova(lm.model1, ddf="Satterthwaite",type=3)
+
+#assumptions
+testDispersion(lm.model1)
+testUniformity(lm.model1)
+testOutliers(lm.model1)
+simulationOutput <- simulateResiduals(fittedModel = lm.model1, plot = F)
+residuals(simulationOutput, quantileFunction = qnorm, outlierValues = c(-7,7))
+plot(simulationOutput)
+
+emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+means <- emmeans(lm.model1, specs = pairwise ~ Clade, type = "respons")
+
+pwpp(means, type = "response", aes = list(label = list(size = 4))) + geom_point(size = 3) 
+```
