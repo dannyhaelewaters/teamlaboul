@@ -1,0 +1,8 @@
+#nexus
+begin sets;
+	CHARSET ITS1 = Rickia_ITS_LSU_SSU_conc.nexus: 1-136;
+	CHARSET 58S = Rickia_ITS_LSU_SSU_conc.nexus: 137-250;
+	CHARSET ITS2 = Rickia_ITS_LSU_SSU_conc.nexus: 251-562;
+	CHARSET LSU = Rickia_ITS_LSU_SSU_conc.nexus: 563-1216;
+	CHARSET SSU = Rickia_ITS_LSU_SSU_conc.nexus: 1217-1760;
+end;

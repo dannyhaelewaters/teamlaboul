@@ -1,0 +1,6 @@
+#nexus
+begin sets;
+	CHARSET ITS1 = Laboulbenia_notiophili_ITS_3_conc.nexus: 1-259;
+	CHARSET 58S = Laboulbenia_notiophili_ITS_3_conc.nexus: 260-401;
+	CHARSET ITS2 = Laboulbenia_notiophili_ITS_3_conc.nexus: 402-717;
+end;
