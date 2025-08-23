@@ -1,0 +1,726 @@
+---
+title: "iNaturalist_Harmonia_Hesperomyces_Quebec"
+author: "Jonathan Cazabonne"
+date: "2025-03-17"
+output:
+  html_document:
+    df_print: paged
+---
+```{r}
+citation("sf") #check current R version and citations for used packages
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# iNaturalist_harmonia_laboul_QC
+
+## Perfomed under R 2024.12.1+563
+
+## R script partly adapted from Riquelme (2024, preprint) 
+- Cristian Riquelme. (2024). iNaturalist as a platform for documenting Chilean funga. EcoEvoRxiv. <https://doi.org/10.32942/X25G9D>
+
+## Geospatial analysis are based on the following documentation:
+- <https://pmarchand1.github.io/atelier_rgeo/rgeo_workshop.html>
+- <https://bookdown.org/brianwood1/QDASS/simple-static-maps.html>
+- <https://www.donneesquebec.ca/recherche/dataset/decoupages-administratifs> 
+
+------------------------------------------------------------------------
+
+# R script
+
+## Work space preparation
+
+### Set working directory
+
+```{r}
+setwd("/Users/jonathancazabonne/Documents/Article/iNaturalist Quebec analysis/Harmonia QC")
+```
+
+### Loading packages
+
+```{r}
+library(tidyverse)
+library(sf)
+library(dplyr)
+```
+
+### Establish personalized theme for the figures made using ggplot2
+
+```{r}
+mytheme <- theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+```
+
+### Import dataset with iNaturalist observations of Harmonia axyridis in Quebec (extracted on the 28th February 2025)
+
+```{r}
+inat_harmonia <- "./Harmonia_laboul_checked_20250317.csv"
+```
+
+### Making sure columns we are using for further analysis are in the right format
+
+```{r}
+Harmonia <- read.csv(inat_harmonia) %>% mutate_at(c("Infection_status", "Age", "Month", "Year", "quality_grade"), as.factor) %>% mutate_at("observed_on", as.Date)
+```
+
+### Subsetting only observations of adults ladybirds, larva and pupa, and research grade observations
+
+```{r}
+Harmonia_adult <- Harmonia %>% filter(Age == "Adult")
+Harmonia_adult_research_grade <- Harmonia_adult %>% filter(quality_grade == "research")
+Harmonia_larva_pupa <- Harmonia %>% filter(Age %in% c("Juvenile", "In transition"))
+Harmonia_research_grade <- Harmonia %>% filter(quality_grade == "research")
+
+write.csv(Harmonia_adult, "Harmonia_adult_QC_20250317.csv", row.names = FALSE)
+write.csv(Harmonia_adult_research_grade, "Harmonia_adult_research_grade_QC_20250317.csv", row.names = FALSE)
+write.csv(Harmonia_larva_pupa, "Harmonia_larva_pupa_QC_20250317.csv", row.names = FALSE)
+write.csv(Harmonia_research_grade, "Harmonia_research_grade_QC_20250317.csv", row.names = FALSE)
+```
+
+## Data exploration
+### Histograms for quality grade
+
+```{r}
+Harmonia_quality_grade_counts <- Harmonia %>%
+  group_by(quality_grade) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(Harmonia_quality_grade_counts)
+```
+
+```{r}
+Harmonia$quality_grade <- factor(Harmonia$quality_grade, levels = Harmonia_quality_grade_counts$quality_grade)
+
+cb_palette_age <- c("#D55E00", "#56B4E9", "#009E73", "#F0E442")
+
+Harmonia %>%
+  ggplot(aes(x = quality_grade, fill = Age, colour = Age)) + 
+  geom_bar(alpha = 0.8) +
+  mytheme +
+  scale_fill_manual(values = cb_palette_age) + 
+  scale_colour_manual(values = cb_palette_age) -> Harmonia_quality_grade
+print(Harmonia_quality_grade)
+```
+
+```{r}
+ggsave(filename = "Harmonia_quality_grade.png", plot = Harmonia_quality_grade, width = 6, height = 4, dpi = 1000)
+```
+
+### Histograms for age categories (Adults, larva, pupa)
+
+```{r}
+Harmonia_age_counts <- Harmonia %>% ## pour l'ensemble des observations
+  group_by(Age) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(Harmonia_age_counts)
+```
+
+```{r}
+Harmonia$Age <- factor(Harmonia$Age, levels = Harmonia_age_counts$Age)
+
+cb_palette_quality <- c("#0072B2", "#E69F00", "#CC79A7")
+
+Harmonia %>% 
+  mutate(Age = as.factor(Age)) %>%
+  ggplot(aes(x = Age, fill = quality_grade, colour = quality_grade)) + 
+  geom_bar(alpha = 0.8) + 
+  labs(x = "Age categories", y = "Number of observations") + 
+  guides(colour = FALSE) + 
+  mytheme + 
+  theme(legend.title = element_text(size = 12), 
+        axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  scale_fill_manual(values = cb_palette_quality) + 
+  scale_colour_manual(values = cb_palette_quality) +
+   theme(aspect.ratio = 0.8) -> Age_plot
+```
+
+```{r}
+Age_plot
+```
+
+/FIGURE 1A
+```{r}
+ggsave(filename = "Age_plot_FINAL.pdf", plot = Age_plot, width = 6, height = 4, dpi = 1000)
+```
+
+```{r}
+Harmonia_research_grade_age_counts <- Harmonia_research_grade %>%
+  group_by(Age) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(Harmonia_research_grade_age_counts)
+```
+
+```{r}
+Harmonia_research_grade$Age <- factor(Harmonia_research_grade$Age, levels = Harmonia_research_grade_age_counts$Age)
+
+cb_palette_age <- c("#D55E00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#E69F00", "#CC79A7")
+
+Harmonia_research_grade %>% 
+  mutate(Age = as.factor(Age)) %>%
+  ggplot(aes(x = Age, fill = Age, colour = Age)) + 
+  geom_bar(alpha = 0.8) + 
+  labs(x = "Age categories", y = "Number of observations") + 
+  guides(colour = "none") + 
+  mytheme + 
+  theme(legend.title = element_text(size = 12), 
+        legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  scale_fill_manual(values = cb_palette_age) + 
+  scale_colour_manual(values = cb_palette_age) -> Age_research_grade_plot
+```
+
+```{r}
+Age_research_grade_plot
+```
+
+
+### Histograms for infection status (Yes, no, suspected)
+
+```{r}
+Infection_counts <- Harmonia_adult_research_grade %>%
+  group_by(Infection_status) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(Infection_counts)
+```
+
+```{r}
+Harmonia_adult_research_grade$Infection_status <- factor(Harmonia_adult_research_grade$Infection_status, levels = Infection_counts$Infection_status)
+
+cb_palette_infection <- c("#E69F00", "#56B4E9", "#009E73")
+
+Harmonia_adult_research_grade %>% 
+  mutate(Infection_status = as.factor(Infection_status)) %>%
+  ggplot(aes(x = Infection_status, fill = Infection_status)) + 
+  geom_bar(alpha = 0.8) + 
+  labs(x = "Visible infection status", y = "Number of observations") + 
+  mytheme + 
+  theme(legend.title = element_text(size = 12), 
+        legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = cb_palette_infection) + 
+  scale_colour_manual(values = cb_palette_infection) +
+   theme(aspect.ratio = 0.8) -> Infection_plot
+```
+
+```{r}
+Infection_plot
+```
+
+/FIGURE 1B
+```{r}
+ggsave(filename = "Infection_plot_FINAL.pdf", plot = Infection_plot, width = 6, height = 4, dpi = 1000)
+```
+
+### Histograms for month and years
+
+```{r}
+month_counts <- Harmonia_research_grade %>%
+  group_by(Month) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(month_counts)
+```
+
+```{r}
+year_counts <- Harmonia_research_grade %>%
+  group_by(Year) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(year_counts)
+```
+
+
+```{r}
+Harmonia_research_grade$Month <- factor(Harmonia_research_grade$Month, levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+
+library(RColorBrewer)
+cb_palette_month <- brewer.pal(12, "Set3")
+
+Harmonia_research_grade %>% 
+  filter(!is.na(observed_on)) %>%
+  mutate(Month = as.factor(Month)) %>%
+  ggplot(aes(x = Month, fill = Age)) + 
+  geom_bar(alpha = 0.8) + 
+  scale_y_continuous(limits = c(0, 1400), expand = c(0, 0)) +
+  mytheme +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = cb_palette_age) +
+  theme(aspect.ratio = 0.8) -> month_plot
+```
+
+```{r}
+month_plot
+```
+/FIGURE 2B
+```{r}
+ggsave(filename = "month_plot_FINAL.pdf", plot = month_plot, width = 6, height = 9, dpi = 1000)
+```
+
+```{r}
+Harmonia_research_grade$Year <- factor(Harmonia_research_grade$Year, levels = sort(unique(Harmonia_research_grade$Year)))
+
+library(RColorBrewer)
+cb_palette_year <- brewer.pal(12, "Set2")
+
+Harmonia_research_grade %>% 
+  filter(!is.na(observed_on)) %>%
+  mutate(Year = as.factor(Year)) %>%
+  ggplot(aes(x = Year, fill = Age)) + 
+  geom_bar(alpha = 0.8) + 
+  mytheme +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = cb_palette_age) +
+   theme(aspect.ratio = 0.8) -> year_plot
+```
+
+```{r}
+year_plot
+```
+
+/FIGURE 2A
+```{r}
+ggsave(filename = "year_plot_FINAL.pdf", plot = year_plot, width = 6, height = 4, dpi = 1000)
+```
+
+## Accumulation of observations through time
+
+```{r}
+Harmonia_research_grade_time_cleaned <- Harmonia_research_grade %>% filter(!is.na(observed_on))
+
+Cumulative_data_harmonia <- Harmonia_research_grade_time_cleaned %>%
+  group_by(observed_on, Age) %>%
+  summarise(count = n()) %>%
+  arrange(observed_on) %>%
+  group_by(Age) %>%
+  mutate(cum_sum = cumsum(count)) %>%
+ungroup() %>%
+  complete(observed_on = seq.Date(min(observed_on), max(observed_on), by = "day"), Age, fill = list(count = 0, cum_sum = 0)) %>%
+  group_by(Age) %>%
+  mutate(cum_sum = cumsum(count))
+  
+Harmonia_accumulation_plot <- Cumulative_data_harmonia %>%
+  ggplot(aes(x = observed_on, y = cum_sum, fill = Age)) + 
+  geom_area(alpha = .8) + 
+  scale_x_date(limits = as.Date(c("1995-07-18", "2025-02-22"))) + 
+  labs(title = "Accumulation curve of infection observations in Quebec", 
+       x = "Time", 
+       y = "Number of observations") + 
+  mytheme + 
+  scale_fill_manual(values = cb_palette_age) +  theme(aspect.ratio = 0.8)
+```
+
+```{r}
+Harmonia_accumulation_plot
+```
+/FIGURE 2C
+```{r}
+ggsave(filename = "Harmonia_accumulation_plot_FINAL.pdf", plot = Harmonia_accumulation_plot, width = 6, height = 4, dpi = 1000)
+```
+
+
+## Accumulation of infection observations through time
+
+```{r}
+Harmonia_adult_research_grade_time_cleaned <- Harmonia_adult_research_grade %>% filter(!is.na(observed_on))
+
+Cumulative_data_infection <- Harmonia_adult_research_grade_time_cleaned %>%
+  group_by(observed_on, Infection_status) %>%
+  summarise(count = n()) %>%
+  arrange(observed_on) %>%
+  group_by(Infection_status) %>%
+  mutate(cum_sum = cumsum(count)) %>%
+ungroup() %>%
+  complete(observed_on = seq.Date(min(observed_on), max(observed_on), by = "day"), Infection_status, fill = list(count = 0, cum_sum = 0)) %>%
+  group_by(Infection_status) %>%
+  mutate(cum_sum = cumsum(count))
+  
+Infection_accumulation_plot <- Cumulative_data_infection %>%
+  ggplot(aes(x = observed_on, y = cum_sum, fill = Infection_status)) + 
+  geom_area(alpha = .8) + 
+  scale_x_date(limits = as.Date(c("1995-07-18", "2025-02-22"))) + 
+  labs(title = "Accumulation curve of infection observations in Quebec", 
+       x = "Time", 
+       y = "Number of observations") + 
+  mytheme + 
+  scale_fill_manual(values = cb_palette_infection) + theme(aspect.ratio = 0.8)
+```
+
+```{r}
+Infection_accumulation_plot
+```
+
+/FIGURE 2D
+```{r}
+ggsave(filename = "Infection_accumulation_plot_FINAL.pdf", plot = Infection_accumulation_plot, width = 6, height = 4, dpi = 1000)
+```
+
+## Map of observations of Harmonia axyridis across Quebec
+
+```{r}
+library(sf)
+mrc <- st_read("SHP/mrc_l.shp")
+```
+
+```{r}
+mrc_qc <- st_read("SHP/mrc_s.shp")
+head(mrc_qc)
+```
+
+```{r}
+# Filter the data for infected observations
+infected_data <- Harmonia_adult_research_grade %>% filter(Infection_status == "Yes")
+
+# Convert the infected data to an sf object
+infected_data_sf <- st_as_sf(infected_data, coords = c("longitude", "latitude"), crs = 4326)
+
+Harmonia_adult_research_grade_sf <- st_as_sf(Harmonia_adult_research_grade, coords = c("longitude", "latitude"), crs = 4326)
+
+host_parasite_data_sf <- sf::st_as_sf(host_parasite_data, coords = c("longitude", "latitude"), crs = 4326)
+
+plot(infected_data_sf["geometry"])
+plot(Harmonia_adult_research_grade_sf["geometry"])
+plot(host_parasite_data_sf["geometry"])
+```
+
+```{r}
+st_crs(mrc)
+head(mrc)
+mrc_proj <- st_transform(mrc, crs = 6622)
+```
+
+```{r}
+st_crs(mrc_qc)
+head(mrc_qc)
+mrc_qc_proj <- st_transform(mrc_qc, crs = 6622)
+```
+
+```{r}
+library(ggspatial)
+ggplot() +
+    geom_sf(data = mrc_qc_proj, inherit.aes = FALSE) +
+    geom_sf(data = Harmonia_adult_research_grade_sf, 
+            color = "#D55E00", fill = "#D55E00", size = 1, shape = 21, inherit.aes = FALSE) +
+    ggtitle("Quebec province") +
+    annotation_scale(location = "tr", width_hint = 0.4) +
+    annotation_north_arrow(location = "tr", which_north = "true", 
+        pad_x = unit(0.0, "in"), pad_y = unit(0.3, "in"),
+        style = north_arrow_fancy_orienteering) + theme_minimal() -> host_obs
+
+host_obs
+```
+
+/FIGURE 4B (upper part)
+```{r}
+ggsave(filename = "host_obs_FINAL.pdf", plot = host_obs, width = 6, height = 4, dpi = 1000)
+```
+
+
+## Merging new mentions of Hesperomyces harmonia with previous mentions from iNaturalist
+
+```{r}
+hesperomyces_obs <- read.csv("Hesperomyces_QC_20250314.csv")
+```
+
+```{r}
+# Remove the specified columns
+hesperomyces_obs_subset <- hesperomyces_obs %>% select(observed_on, url, latitude, longitude, scientific_name, Year, Month)
+
+infected_data_subset <- infected_data %>% select(observed_on, url, latitude, longitude, scientific_name, Year, Month)
+#Make the same formats to bind
+infected_data_subset <- infected_data_subset %>% 
+  mutate_at("observed_on", as.Date) %>% 
+  mutate_at(c("url", "scientific_name"), as.character) %>%
+  mutate_at(c("Year", "Month"), as.factor)
+
+hesperomyces_obs_subset <- hesperomyces_obs_subset %>% 
+  mutate_at("observed_on", as.Date) %>% 
+  mutate_at(c("url", "scientific_name"), as.character) %>%
+  mutate_at(c("Year", "Month"), as.factor)
+
+# Replace scientific_name values
+infected_data_subset <- infected_data_subset %>% mutate(scientific_name = "New_observation_inat")
+hesperomyces_obs_subset <- hesperomyces_obs_subset %>% mutate(scientific_name = "Previous_observation_inat")
+
+# Merge the two datasets
+hesperomyces_new_obs <- bind_rows(infected_data_subset, hesperomyces_obs_subset)
+
+# Save the merged dataset to your computer
+write.csv(hesperomyces_new_obs, "hesperomyces_new_obs_FINAL.csv", row.names = FALSE)
+```
+
+```{r}
+Harmonia_adult_research_grade_subset <- Harmonia_adult_research_grade %>% select(observed_on, url, latitude, longitude, scientific_name, Year, Month)
+
+host_parasite_data <- bind_rows(hesperomyces_new_obs, Harmonia_adult_research_grade_subset)
+```
+
+
+## correcting four doublons
+```{r}
+# Function to check for duplicate GPS coordinates and observed_on date
+check_duplicates_gps_date <- function(hesperomyces_new_obs) {
+  duplicated_entries <- hesperomyces_new_obs[duplicated(hesperomyces_new_obs[, c("latitude", "longitude", "observed_on")]) | duplicated(hesperomyces_new_obs[, c("latitude", "longitude", "observed_on")], fromLast = TRUE), ]
+  return(duplicated_entries)
+}
+
+# Detect duplicates in Harmonia dataset
+duplicates_gps_date <- check_duplicates_gps_date(hesperomyces_new_obs)
+print(duplicates_gps_date)
+```
+
+```{r}
+#28 doublon removed and 3 needs_id removed
+urls_to_remove <- c(
+  "https://www.inaturalist.org/observations/52381120",
+  "https://www.inaturalist.org/observations/84510434",
+  "https://www.inaturalist.org/observations/91478224",
+  "https://www.inaturalist.org/observations/106546558",
+  "https://www.inaturalist.org/observations/95850418",
+  "https://www.inaturalist.org/observations/141491024",
+  "https://www.inaturalist.org/observations/148600616",
+  "https://www.inaturalist.org/observations/128964180",
+  "https://www.inaturalist.org/observations/131846281",
+  "https://www.inaturalist.org/observations/142460293",
+  "https://www.inaturalist.org/observations/172527194",
+  "https://www.inaturalist.org/observations/172915232",
+  "https://www.inaturalist.org/observations/201363904",
+  "https://www.inaturalist.org/observations/180507054",
+  "https://www.inaturalist.org/observations/218255836",
+  "https://www.inaturalist.org/observations/220711094",
+  "https://www.inaturalist.org/observations/229835980",
+  "https://www.inaturalist.org/observations/230336267",
+  "https://www.inaturalist.org/observations/246211461",
+  "https://www.inaturalist.org/observations/239319026",
+  "https://www.inaturalist.org/observations/238340007",
+  "https://www.inaturalist.org/observations/125106633",
+  "https://www.inaturalist.org/observations/137742473",
+  "https://www.inaturalist.org/observations/248347563",
+  "https://www.inaturalist.org/observations/234749247",
+  "https://www.inaturalist.org/observations/188300414",
+  "https://www.inaturalist.org/observations/127179625",
+  "https://www.inaturalist.org/observations/122942196",
+  "https://www.inaturalist.org/observations/216517091", #needs_id, likely pollen but no laboul
+  "https://www.inaturalist.org/observations/177254741", #needs_id, likely reflex blood but no laboul
+  "https://www.inaturalist.org/observations/223882516" #needs_id
+)
+
+# Supposons que ton dataframe s'appelle df
+Hesperomyces_new_obs_corrected <- hesperomyces_new_obs %>%
+  filter(!url %in% urls_to_remove)
+
+write.csv(Hesperomyces_new_obs_corrected, "hesperomyces_new_obs_corrected_FINAL.csv", row.names = FALSE)
+
+#if done manually
+#Hesperomyces_new_obs_corrected <- read.csv("hesperomyces_new_obs_FINAL_corrected_doublon.csv") #load corrected dataset for duplicates; 21 observations removed 
+```
+
+```{r}
+obs_increase <- Hesperomyces_new_obs_corrected %>%
+  count(scientific_name) %>%
+  spread(scientific_name, n) %>%
+  # Calcul du total actuel
+  mutate(Total_current = Previous_observation_inat + New_observation_inat,
+         # Calcul de l'augmentation en pourcentage par rapport aux anciennes observations
+         obs_increase_percent = ((Total_current - Previous_observation_inat) / Previous_observation_inat) * 100) %>%
+  pull(obs_increase_percent)
+
+obs_increase
+```
+
+```{r}
+hesperomyces_new_obs_counts <- Hesperomyces_new_obs_corrected %>%
+  group_by(scientific_name) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+print(hesperomyces_new_obs_counts)
+```
+
+```{r}
+Hesperomyces_new_obs_corrected$scientific_name <- factor(Hesperomyces_new_obs_corrected$scientific_name, levels = hesperomyces_new_obs_counts$scientific_name)
+
+cb_palette_obs <- c("#CC79A7", "#666666")
+
+Hesperomyces_new_obs_corrected %>% 
+  mutate(scientific_name = as.factor(scientific_name)) %>%
+  ggplot(aes(x = scientific_name, fill = scientific_name, colour = scientific_name)) + 
+  geom_bar(alpha = 0.8) + 
+  labs(y = "Number of observations") + 
+  guides(colour = FALSE) + 
+  mytheme + 
+  theme(legend.title = element_text(size = 12), 
+        legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1)) + 
+  scale_fill_manual(values = cb_palette_obs) + 
+  scale_colour_manual(values = cb_palette_obs) +  theme(aspect.ratio = 0.8) -> obs_plot
+```
+
+```{r}
+obs_plot
+```
+/FIGURE 3A
+```{r}
+ggsave(filename = "obs_plot_FINAL.pdf", plot = obs_plot, width = 4, height = 4, dpi = 1000)
+```
+
+
+## Evolution of Hesperomyces observations through time in Québec
+```{r}
+hesperomyces_new_obs_cleaned <- Hesperomyces_new_obs_corrected %>% filter(!is.na(observed_on))
+
+Cumulative_data_hesperomyces <- hesperomyces_new_obs_cleaned %>%
+  mutate_at("observed_on", as.Date) %>%
+  group_by(observed_on, scientific_name) %>%
+  summarise(count = n()) %>%
+  arrange(observed_on) %>%
+  group_by(scientific_name) %>%
+  mutate(cum_sum = cumsum(count)) %>%
+ungroup() %>%
+  complete(observed_on = seq.Date(min(observed_on), max(observed_on), by = "day"), scientific_name, fill = list(count = 0, cum_sum = 0)) %>%
+  group_by(scientific_name) %>%
+  mutate(cum_sum = cumsum(count))
+  
+hesperomyces_accumulation_plot <- Cumulative_data_hesperomyces %>%
+  ggplot(aes(x = observed_on, y = cum_sum, fill = scientific_name)) + 
+  geom_area(alpha = .8) + 
+  scale_x_date(limits = as.Date(c("2009-06-05", "2024-10-20"))) + 
+  labs(title = "Accumulation curve of Hesperomyces harmoniae in Quebec", 
+       x = "Time", 
+       y = "Number of observations") + 
+  mytheme + 
+  scale_fill_manual(values = cb_palette_obs) +  theme(aspect.ratio = 0.8)
+```
+
+```{r}
+hesperomyces_accumulation_plot
+```
+/FIGURE 3B
+```{r}
+ggsave(filename = "hesperomyces_accumulation_plot_FINAL.pdf", plot = hesperomyces_accumulation_plot, width = 6, height = 4, dpi = 1000)
+```
+
+```{r}
+Hesperomyces_new_obs_corrected$Year <- factor(Hesperomyces_new_obs_corrected$Year, levels = sort(unique(Hesperomyces_new_obs_corrected$Year)))
+
+Hesperomyces_new_obs_corrected$Month <- factor(Hesperomyces_new_obs_corrected$Month, levels = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"))
+
+library(RColorBrewer)
+cb_palette_year <- brewer.pal(12, "Set2")
+
+Hesperomyces_new_obs_corrected %>% 
+  filter(!is.na(observed_on)) %>%
+  mutate(Month = as.factor(Month)) %>%
+  ggplot(aes(x = Month, fill = scientific_name)) + 
+  geom_bar(alpha = 0.8) + 
+  mytheme +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = cb_palette_obs) +  theme(aspect.ratio = 0.8) -> hesperomyces_month_plot
+
+Hesperomyces_new_obs_corrected %>% 
+  filter(!is.na(observed_on)) %>%
+  mutate(Year = as.factor(Year)) %>%
+  ggplot(aes(x = Year, fill = scientific_name)) + 
+  geom_bar(alpha = 0.8) + 
+  mytheme +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_fill_manual(values = cb_palette_obs) +  theme(aspect.ratio = 0.8) -> hesperomyces_year_plot
+```
+
+```{r}
+hesperomyces_year_plot
+```
+
+/Figure 3C
+```{r}
+ggsave(filename = "hesperomyces_year_plot_FINAL.pdf", plot = hesperomyces_year_plot, width = 6, height = 4, dpi = 1000)
+```
+
+```{r}
+hesperomyces_month_plot
+```
+
+/Figure 3D
+```{r}
+ggsave(filename = "hesperomyces_month_plot_FINAL.pdf", plot = hesperomyces_month_plot, width = 6, height = 4, dpi = 1000)
+```
+
+##Geospatial analysis of Hesperomyces observations across Québec
+```{r}
+hesperomyces_new_obs_corrected_sf <- st_as_sf(Hesperomyces_new_obs_corrected, coords = c("longitude", "latitude"), crs = 4326)
+
+plot(hesperomyces_new_obs_corrected_sf["geometry"])
+```
+
+```{r}
+theme_set(theme_test())
+ggplot() +
+  geom_sf(data = mrc_qc_proj) +
+  geom_sf(
+    data = hesperomyces_new_obs_corrected_sf,
+    aes(fill = scientific_name, color = scientific_name),
+    shape = 21, size = 1
+  ) +
+  scale_fill_manual(values = cb_palette_obs) +
+  scale_color_manual(guide = FALSE, values = cb_palette_obs) +
+  ggtitle("Quebec province") +
+    annotation_scale(location = "tr", width_hint = 0.4) +
+    annotation_north_arrow(location = "tr", which_north = "true", 
+        pad_x = unit(0.0, "in"), pad_y = unit(0.3, "in"),
+        style = north_arrow_fancy_orienteering) +
+  theme_minimal() -> map_hesperomyces
+map_hesperomyces
+```
+/Figure 4A (upper part)
+```{r}
+ggsave(filename = "map_hesperomyces_FINAL.pdf", plot = map_hesperomyces, width = 6, height = 4, dpi = 1000)
+```
+
+```{r}
+ggplot(data = hesperomyces_new_obs_corrected_sf) +
+    geom_sf() +
+    coord_sf(crs = 6622)
+```
+
+
+## Map zooming
+```{r}
+theme_set(theme_test()) 
+
+ggplot(data = hesperomyces_new_obs_corrected_sf) + 
+  geom_sf(data = mrc_qc_proj) + 
+  geom_sf(aes(fill = scientific_name, color = scientific_name), size = 2) + 
+  scale_fill_manual(values = cb_palette_obs) +
+  scale_color_manual(guide = FALSE, values = cb_palette_obs) +
+  coord_sf(xlim = c(-80, -62), ylim = c(45, 51)) -> map_hesperomyces_zoom 
+
+ggplot(data = Harmonia_adult_research_grade_sf) + 
+  geom_sf(data = mrc_qc_proj) + 
+  geom_sf(aes(fill = Age, color = Age), size = 2) + 
+  scale_fill_manual(values = "#D55E00") +
+  scale_color_manual(guide = FALSE, values = "#D55E00") +
+  coord_sf(xlim = c(-80, -62), ylim = c(45, 51)) -> map_host_zoom
+```
+
+```{r}
+map_hesperomyces_zoom
+```
+/Figure 4A (bottom part)
+```{r}
+ggsave(filename = "map_hesperomyces_zoom_FINAL.pdf", plot = map_hesperomyces_zoom, width = 6, height = 4, dpi = 1000)
+```
+
+```{r}
+map_host_zoom
+```
+/Figure 4B (bottom part)
+```{r}
+ggsave(filename = "map_host_zoom_FINAL.pdf", plot = map_host_zoom, width = 6, height = 4, dpi = 1000)
+```
+
+
+Last updated 23 August 2025 by Jonathan Cazabonne
+
+
