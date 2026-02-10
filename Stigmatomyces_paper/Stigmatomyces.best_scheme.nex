@@ -1,0 +1,12 @@
+#nexus
+begin sets;
+  charset LSU = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 1-1019;
+  charset SSU = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 1020-2776;
+  charset TEF1_TEF2 = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 2777-3393\3  2778-3393\3;
+  charset TEF3 = Stigmatomyces_LSU_SSU_TEF1_conc.nexus: 2779-3393\3;
+  charpartition mymodels =
+    GTR+F+I+G4: LSU,
+    GTR+F+I+G4: SSU,
+    HKY+I+G4: TEF1_TEF2,
+    GTR+F+I+G4: TEF3;
+end;

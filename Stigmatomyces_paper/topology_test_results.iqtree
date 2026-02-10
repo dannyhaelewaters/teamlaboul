@@ -1,0 +1,310 @@
+IQ-TREE 3.0.1 built May  5 2025
+
+Partition file name: withp.best_scheme.nex
+Input file name: Stigmatomyces_LSU_SSU_TEF1_conc.nexus
+Type of analysis: ModelFinder + tree reconstruction
+Random seed number: 466832
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Hector Banos, Andrew J. Roger,
+Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman, Matthew W. Hahn,
+Gavin Huttley, Robert Lanfear, Bui Quang Minh (2025)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Submitted.
+
+Please also cite the following paper(s) for the feature(s) that you used:
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used partition models please also cite:
+
+Olga Chernomor, Arndt von Haeseler, and Bui Quang Minh (2016)
+Terrace aware data structure for phylogenomic inference from
+supermatrices. Syst. Biol., 65:997-1008.
+https://doi.org/10.1093/sysbio/syw037
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 86 taxa with 4 partitions and 3393 total sites (26.7706% missing data)
+
+  ID	Type	Seq	Site	Unique	Infor	Invar	Const	Name
+   1	DNA	48	1019	613	403	518	518	LSU
+   2	DNA	85	1757	800	407	1162	1162	SSU
+   3	DNA	25	412	103	56	343	343	TEF1_TEF2
+   4	DNA	25	205	200	172	15	15	TEF3
+
+Column meanings:
+  Unique: Number of unique site patterns
+  Infor:  Number of parsimony-informative sites
+  Invar:  Number of invariant sites
+  Const:  Number of constant sites (can be subset of invariant sites)
+
+SUBSTITUTION PROCESS
+--------------------
+
+Edge-linked-proportional partition model with separate substitution models and separate rates across sites
+
+  ID  Model           Speed  Parameters
+   1  GTR+F+I+G4     1.3744  GTR{0.740502,4.42098,2.00688,0.601138,7.61431}+F{0.291642,0.163875,0.265037,0.279446}+I{0.286717}+G4{0.569822}
+   2  GTR+F+I+G4     0.3559  GTR{0.868645,5.23384,2.10525,0.703652,10.2295}+F{0.271445,0.193338,0.261841,0.273376}+I{0.398209}+G4{0.553604}
+   3  HKY+F+I+G4     0.2859  HKY{2.48886}+F{0.30503,0.223271,0.262185,0.209514}+I{0.638991}+G4{0.417108}
+   4  GTR+F+I+G4     6.0946  GTR{1.53285,21.9208,2.85272,1.17944,7.45318}+F{0.205347,0.292391,0.176747,0.325515}+I{0.0505681}+G4{1.67112}
+
+STARTING TREE
+-------------
+
+Log-likelihood of the tree: -25495.5547 (s.e. 539.8237)
+Unconstrained log-likelihood (without tree): -18450.6087
+Number of free parameters (#branches + #model parameters): 208
+Akaike information criterion (AIC) score: 51407.1095
+Corrected Akaike information criterion (AICc) score: 51434.4160
+Bayesian information criterion (BIC) score: 52682.0392
+
+Mixture-based log-likelihood of the tree: -27553.5777
+Marginal Akaike information criterion (mAIC) score: 55523.1554
+
+Total tree length (sum of branch lengths): 6.9990
+Sum of internal branch lengths: 3.0272 (43.2516% of tree length)
+
+WARNING: 13 near-zero internal branches (<0.0003) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Arthrorhynchus_nycteribiae_D._Haelew._1015d' is drawn at root
+
++-------------Arthrorhynchus_nycteribiae_D._Haelew._1015d
+|
+|               +--------------Coreomyces_sp._H37-1
+|            +--|
+|            |  |   +--Chitonomyces_hyalinus
+|            |  +---|
+|            |      +--Chitonomyces_paradoxus_JN127396
+|         +--|
+|         |  +--Zodiomyces_vorticellarius
+|      +--|
+|      |  +------------Euzodiomyces_lathrobii_LG260B
+|  +---|
+|  |   |              +--Herpomyces_periplanetae_D._Haelew._602c
+|  |   |  +-----------|
+|  |   |  |           +--Herpomyces_shelfordellae_Bud_Slat
+|  |   +--|
+|  |      +--------Pyxidiophora_arvernensis_CBS65782
++--|
+|  +-----Prolixandromyces_triandrus_Nagyvisnyo1
+|
+|                                     +--Fanniomyces_ceratophorus_D._Haelew._1136h
+|                                  +--|
+|                                  |  +**Stigmatomyces_burdigalensis_LG678
+|                               +--|
+|                               |  |               +**Stigmatomyces_athyroglossae_D._Haelew._4251a
+|                               |  |           +---|
+|                               |  |           |   +--Stigmatomyces_sp._D._Haelew._5740b
+|                               |  |        +**|
+|                               |  |        |  +--Stigmatomyces_rugosus_D._Haelew._1138a
+|                               |  |     +--|
+|                               |  |     |  |        +**Stigmatomyces_limnophorae_D._Haelew._1802c
+|                               |  |     |  |     +--|
+|                               |  |     |  |     |  +**Stigmatomyces_limnophorae_D._Haelew._1802d
+|                               |  |     |  |  +**|
+|                               |  |     |  |  |  |     +**Stigmatomyces_chamaemyiae_D._Haelew._1137a
+|                               |  |     |  |  |  |  +--|
+|                               |  |     |  |  |  |  |  +**Stigmatomyces_chamaemyiae_D._Haelew._1137c
+|                               |  |     |  |  |  +--|
+|                               |  |     |  |  |     +--Stigmatomyces_limnophorae_AF407576
+|                               |  |     |  +--|
+|                               |  |     |     +**Stigmatomyces_limnophorae_D._Haelew._1802e
+|                               |  |  +--|
+|                               |  |  |  |      +**Stigmatomyces_protrudens
+|                               |  |  |  |   +--|
+|                               |  |  |  |   |  +**Stigmatomyces_borealis_AW797
+|                               |  |  |  +---|
+|                               |  |  |      +--Stigmatomyces_trianguliapicalis_D._Haelew._5733a
+|                               |  +--|
+|                               |     |           +**Stigmatomyces_majewskii_D._Haelew._3830b
+|                               |     |        +--|
+|                               |     |        |  +**Stigmatomyces_majewskii_D._Haelew._5750a
+|                               |     |     +--|
+|                               |     |     |  |        +**Stigmatomyces_sp._D._Haelew._3958a
+|                               |     |     |  |     +**|
+|                               |     |     |  |     |  |  +**Stigmatomyces_sp._D._Haelew._3959a
+|                               |     |     |  |     |  +**|
+|                               |     |     |  |     |     +--Appendiculina_entomophila_D._Haelew._1063a
+|                               |     |     |  |  +--|
+|                               |     |     |  |  |  +**Stigmatomyces_sp._D._Haelew._3961a
+|                               |     |     |  +--|
+|                               |     |     |     +**Appendiculina_entomophila_D._Haelew._1062c
+|                               |     +-----|
+|                               |           |  +**Appendiculina_gregaria_D._Haelew._1008a
+|                               |           +--|
+|                               |              |     +**Appendiculina_gregaria_D._Haelew._1008b
+|                               |              |  +**|
+|                               |              |  |  |  +**Stigmatomyces_dacinus_ms09608
+|                               |              |  |  +--|
+|                               |              |  |     +**Stigmatomyces_dacinus_ms09609
+|                               |              +**|
+|                               |                 +**Appendiculina_gregaria_LG642
+|                            +--|
+|                            |  |            +--Gloeandromyces_cusucoensis_D._Haelew._3194b
+|                            |  |         +**|
+|                            |  |         |  |  +--Gloeandromyces_plesiosaurus_f._plesiosaurus_D._Haelew._3310d
+|                            |  |         |  +--|
+|                            |  |         |     +--Gloeandromyces_streblae_D._Haelew._1309a
+|                            |  |      +--|
+|                            |  |      |  +--Gloeandromyces_pageanus_f._polymorphus_D._Haelew._1315b
+|                            |  |  +---|
+|                            |  |  |   |        +--Gloeandromyces_dickii_D._Haelew._1312b
+|                            |  |  |   |     +--|
+|                            |  |  |   |     |  +--Gloeandromyces_pseudodickii_D._Haelew._3417l
+|                            |  |  |   |  +--|
+|                            |  |  |   |  |  |  +--Gloeandromyces_diversiformis_f._vanillicarpiformis_D._Haelew._1863b
+|                            |  |  |   |  |  +--|
+|                            |  |  |   |  |     +--Gloeandromyces_verbekeniae_f._verbekeniae_D._Haelew._1741b
+|                            |  |  |   +--|
+|                            |  |  |      |  +--Gloeandromyces_hilleri_D._Haelew._1721a
+|                            |  |  |      +--|
+|                            |  |  |         +--Gloeandromyces_nycteribiidarum_D._Haelew._1319b
+|                            |  +--|
+|                            |     |        +--Stigmatomyces_crassicollis_D._Haelew._3826b
+|                            |     |     +--|
+|                            |     |     |  +--Stigmatomyces_sp._D._Haelew._5739a
+|                            |     |  +--|
+|                            |     |  |  |  +**Stigmatomyces_sp._D._Haelew._5087a
+|                            |     |  |  +--|
+|                            |     |  |     |        +**Stigmatomyces_sp._D._Haelew._5502a
+|                            |     |  |     |     +**|
+|                            |     |  |     |     |  +**Stigmatomyces_sp._D._Haelew._5509a
+|                            |     |  |     |  +--|
+|                            |     |  |     |  |  +**Stigmatomyces_sp._D._Haelew._5507a
+|                            |     |  |     +**|
+|                            |     |  |        +**Stigmatomyces_subterraneus_D._Haelew._3841b
+|                            |     +--|
+|                            |        |    +**Stigmatomyces_sp._D._Haelew._5021b
+|                            |        +----|
+|                            |             +--Stigmatomyces_limosinae
+|                        +---|
+|                        |   |              +**Stigmatomyces_ephydrae_D._Haelew._3428c
+|                        |   |           +--|
+|                        |   |           |  +**Stigmatomyces_ephydrae_D._Haelew._3530b
+|                        |   |        +--|
+|                        |   |        |  +--Stigmatomyces_hydrelliae_D._Haelew._4250a
+|                        |   |     +**|
+|                        |   |     |  +--Stigmatomyces_geomyzae_D._Haelew._5041a
+|                        |   +-----|
+|                        |         +--Stigmatomyces_sp._D._Haelew._3960a
+|                     +**|
+|                     |  |            +--Rhachomyces_canariensis_D._Haelew._4413a
+|                     |  |     +------|
+|                     |  |     |      +-------Rhachomyces_philonthinus_MG674659
+|                     |  |  +--|
+|                     |  |  |  +---------Rhadinomyces_pallidus_MG674649
+|                     |  +--|
+|                     |     +--------------Teratomyces_sp._JG58
+|                  +--|
+|                  |  |              +**Corethromyces_stilici_D._Haelew._4057b
+|                  |  |    +---------|
+|                  |  |    |         +**Corethromyces_stilici_D._Haelew._5352a
+|                  |  +----|
+|                  |       |           +---------Monoicomyces_homalotae_D._Haelew._1014c
+|                  |       |      +----|
+|                  |       |      |    +------Monoicomyces_nigrescens
+|                  |       +------|
+|                  |              +------------------------------Monoicomyces_invisibilis_MT004
+|           +------|
+|           |      +-------------Cucujomyces_sp._LG588
+|        +--|
+|        |  |                    +--Laboulbenia_eubradycelli_D._Haelew._4196b
+|        |  |                +---|
+|        |  |                |   +--Laboulbenia_flagellata_D._Haelew._1457a
+|        |  |        +-------|
+|        |  |        |       |      +----------Eucantharomyces_egae_LG359
+|        |  |        |       +------|
+|        |  |        |              +---Misgomyces_dyschirii_LG487
+|        |  |     +**|
+|        |  |     |  +-------------Peyritschiella_angolensis_LG479
+|        |  |  +--|
+|        |  |  |  +----------------------------Rickia_sp._LG484
+|        |  +--|
+|        |     |             +-----Nycteromyces_streblidinus_D._Haelew._1324d
+|        |     +-------------|
+|        |                   |                +--Polyandromyces_coptosomalis_D._Haelew._313f
+|        |                   |       +--------|
+|        |                   |       |        +------Polyandromyces_coptosomalis_HM499a
+|        |                   +-------|
+|        |                           +--------------Dimeromyces_anisolabis_LG532
+|     +--|
+|     |  |                              +-------Ecteinomyces_trichopterophilus_LG584
+|     |  |                           +--|
+|     |  |                           |  +--Kyphomyces_platensis_LG645
+|     |  +---------------------------|
+|     |                              +--Hydrophilomyces_rhynchophorus_LG533
+|  +**|
+|  |  +----------Sphaleromyces_lathrobii
++--|
+   |         +--Hesperomyces_coccinelloides_D._Haelew._1428a
+   +---------|
+             +--Hesperomyces_parexochomi_D._Haelew._1691
+
+Tree in newick format:
+
+(Arthrorhynchus_nycteribiae_D._Haelew._1015d:0.1703093792,(((((Coreomyces_sp._H37-1:0.1907180483,(Chitonomyces_hyalinus:0.0134990416,Chitonomyces_paradoxus_JN127396:0.0474093601):0.0578097440):0.0194137151,Zodiomyces_vorticellarius:0.0434154814):0.0147396375,Euzodiomyces_lathrobii_LG260B:0.1622260293):0.0122471405,((Herpomyces_periplanetae_D._Haelew._602c:0.0238144597,Herpomyces_shelfordellae_Bud_Slat:0.0194096023):0.1496282902,Pyxidiophora_arvernensis_CBS65782:0.1097173857):0.0283846358):0.0497516587,Prolixandromyces_triandrus_Nagyvisnyo1:0.0743877209):0.0052704449,(((((((((((Fanniomyces_ceratophorus_D._Haelew._1136h:0.0155101752,Stigmatomyces_burdigalensis_LG678:0.0000022683):0.0442236713,(((((Stigmatomyces_athyroglossae_D._Haelew._4251a:0.0000022683,Stigmatomyces_sp._D._Haelew._5740b:0.0004753611):0.0513825317,Stigmatomyces_rugosus_D._Haelew._1138a:0.0121051577):0.0000021574,(((Stigmatomyces_limnophorae_D._Haelew._1802c:0.0000022683,Stigmatomyces_limnophorae_D._Haelew._1802d:0.0000022683):0.0045426443,((Stigmatomyces_chamaemyiae_D._Haelew._1137a:0.0000022683,Stigmatomyces_chamaemyiae_D._Haelew._1137c:0.0000018566):0.0121271012,Stigmatomyces_limnophorae_AF407576:0.0278411707):0.0038736795):0.0000018520,Stigmatomyces_limnophorae_D._Haelew._1802e:0.0000024586):0.0412041208):0.0299262642,((Stigmatomyces_protrudens:0.0000023588,Stigmatomyces_borealis_AW797:0.0000022683):0.0169730982,Stigmatomyces_trianguliapicalis_D._Haelew._5733a:0.0166354084):0.0503569654):0.0415033459,(((Stigmatomyces_majewskii_D._Haelew._3830b:0.0000022683,Stigmatomyces_majewskii_D._Haelew._5750a:0.0000022683):0.0038679981,(((Stigmatomyces_sp._D._Haelew._3958a:0.0000022683,(Stigmatomyces_sp._D._Haelew._3959a:0.0000017214,Appendiculina_entomophila_D._Haelew._1063a:0.0054833039):0.0000017214):0.0000021192,Stigmatomyces_sp._D._Haelew._3961a:0.0000022683):0.0037551417,Appendiculina_entomophila_D._Haelew._1062c:0.0000022683):0.0036491164):0.0293759730,(Appendiculina_gregaria_D._Haelew._1008a:0.0000022683,((Appendiculina_gregaria_D._Haelew._1008b:0.0000022683,(Stigmatomyces_dacinus_ms09608:0.0000022683,Stigmatomyces_dacinus_ms09609:0.0000022683):0.0163976548):0.0000025057,Appendiculina_gregaria_LG642:0.0000022683):0.0000022683):0.0125061447):0.0752871233):0.0119469082):0.0269998548,((((Gloeandromyces_cusucoensis_D._Haelew._3194b:0.0033744762,(Gloeandromyces_plesiosaurus_f._plesiosaurus_D._Haelew._3310d:0.0032547835,Gloeandromyces_streblae_D._Haelew._1309a:0.0053156657):0.0061059308):0.0002864713,Gloeandromyces_pageanus_f._polymorphus_D._Haelew._1315b:0.0171144503):0.0319945821,(((Gloeandromyces_dickii_D._Haelew._1312b:0.0032790938,Gloeandromyces_pseudodickii_D._Haelew._3417l:0.0025768771):0.0253266777,(Gloeandromyces_diversiformis_f._vanillicarpiformis_D._Haelew._1863b:0.0221125806,Gloeandromyces_verbekeniae_f._verbekeniae_D._Haelew._1741b:0.0229633135):0.0146540171):0.0108783932,(Gloeandromyces_hilleri_D._Haelew._1721a:0.0025577422,Gloeandromyces_nycteribiidarum_D._Haelew._1319b:0.0057660397):0.0340751352):0.0182795581):0.0538507679,(((Stigmatomyces_crassicollis_D._Haelew._3826b:0.0010648527,Stigmatomyces_sp._D._Haelew._5739a:0.0012599643):0.0390102920,(Stigmatomyces_sp._D._Haelew._5087a:0.0000017037,(((Stigmatomyces_sp._D._Haelew._5502a:0.0000022683,Stigmatomyces_sp._D._Haelew._5509a:0.0000020621):0.0000020621,Stigmatomyces_sp._D._Haelew._5507a:0.0000022683):0.0022460989,Stigmatomyces_subterraneus_D._Haelew._3841b:0.0000022683):0.0000017024):0.0348372944):0.0113323701,(Stigmatomyces_sp._D._Haelew._5021b:0.0000018048,Stigmatomyces_limosinae:0.0254861710):0.0630693187):0.0150437154):0.0086534471):0.0097607582,((((Stigmatomyces_ephydrae_D._Haelew._3428c:0.0000022683,Stigmatomyces_ephydrae_D._Haelew._3530b:0.0000022683):0.0080185924,Stigmatomyces_hydrelliae_D._Haelew._4250a:0.0083239298):0.0336106442,Stigmatomyces_geomyzae_D._Haelew._5041a:0.0125180454):0.0000024653,Stigmatomyces_sp._D._Haelew._3960a:0.0259608926):0.0768899925):0.0554527321,(((Rhachomyces_canariensis_D._Haelew._4413a:0.0311037108,Rhachomyces_philonthinus_MG674659:0.1055859468):0.0836341772,Rhadinomyces_pallidus_MG674649:0.1214679562):0.0411641726,Teratomyces_sp._JG58:0.1863651314):0.0297548740):0.0000025281,((Corethromyces_stilici_D._Haelew._4057b:0.0000022683,Corethromyces_stilici_D._Haelew._5352a:0.0000022683):0.1289660611,((Monoicomyces_homalotae_D._Haelew._1014c:0.1286600327,Monoicomyces_nigrescens:0.0873694461):0.0602197701,Monoicomyces_invisibilis_MT004:0.3705998500):0.0951777058):0.0610461131):0.0196504121,Cucujomyces_sp._LG588:0.1785427742):0.0876108829,(((((Laboulbenia_eubradycelli_D._Haelew._4196b:0.0189321876,Laboulbenia_flagellata_D._Haelew._1457a:0.0406945722):0.0566511710,(Eucantharomyces_egae_LG359:0.1329139802,Misgomyces_dyschirii_LG487:0.0559272465):0.0837904292):0.1009681623,Peyritschiella_angolensis_LG479:0.1705414963):0.0000018255,Rickia_sp._LG484:0.3531790565):0.0257202941,(Nycteromyces_streblidinus_D._Haelew._1324d:0.0766321916,((Polyandromyces_coptosomalis_D._Haelew._313f:0.0177569694,Polyandromyces_coptosomalis_HM499a:0.0849582934):0.1162658390,Dimeromyces_anisolabis_LG532:0.1828178867):0.0959106821):0.1732783337):0.0103711492):0.0402659949,((Ecteinomyces_trichopterophilus_LG584:0.0971955326,Kyphomyces_platensis_LG645:0.0161341535):0.0271371914,Hydrophilomyces_rhynchophorus_LG533:0.0283661401):0.3432470596):0.0361953362,Sphaleromyces_lathrobii:0.1316221034):0.0000017640,(Hesperomyces_coccinelloides_D._Haelew._1428a:0.0444984854,Hesperomyces_parexochomi_D._Haelew._1691:0.0208593805):0.1265020202):0.0062419454);
+
+
+USER TREES
+----------
+
+See withp.best_scheme.nex.trees for trees with branch lengths.
+
+Tree      logL    deltaL  bp-RELL    p-KH     p-SH       c-ELW       p-AU
+-------------------------------------------------------------------------
+  1  -25410.6495       0    0.58 +  0.669 +      1 +     0.562 +      0.8 + 
+  2 -25436.97469  26.325  0.0001 - 0.0038 - 0.0155 -  0.000301 -  0.00166 - 
+  3 -25427.78982   17.14  0.0113 - 0.0613 +  0.192 +    0.0128 -   0.0252 - 
+  4 -25414.56211  3.9126  0.0815 +   0.15 +  0.751 +     0.099 +    0.161 + 
+  5  -25432.1042  21.455   0.011 - 0.0231 - 0.0943 +    0.0115 -   0.0252 - 
+  6 -25436.97809  26.329  0.0004 - 0.0038 - 0.0154 -    0.0003 -  0.00191 - 
+  7 -25413.57249   2.923   0.315 +  0.331 +   0.78 +     0.314 +    0.458 + 
+  8 -25453.16016  42.511  0.0002 - 0.0003 -  0.003 -  0.000202 - 5.24e-05 - 
+
+deltaL  : logL difference from the maximal logl in the set.
+bp-RELL : bootstrap proportion using RELL method (Kishino et al. 1990).
+p-KH    : p-value of one sided Kishino-Hasegawa test (1989).
+p-SH    : p-value of Shimodaira-Hasegawa test (2000).
+c-ELW   : Expected Likelihood Weight (Strimmer & Rambaut 2002).
+p-AU    : p-value of approximately unbiased (AU) test (Shimodaira, 2002).
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+All tests performed 10000 resamplings using the RELL method.
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t withp.best_scheme.nex.treefile -p withp.best_scheme.nex.best_model.nex
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s Stigmatomyces_LSU_SSU_TEF1_conc.nexus --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s Stigmatomyces_LSU_SSU_TEF1_conc.nexus --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Fri Feb 06 16:32:06 2026
+Total CPU time used: 10.2 seconds (0h:0m:10s)
+Total wall-clock time used: 12 seconds (0h:0m:11s)
+

@@ -1,0 +1,164 @@
+---
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+```{r}
+library("FactoMineR")
+library("factoextra")
+library("plotly")
+library("lme4")
+library("MASS")
+library("readxl")
+library("ggplot2")
+library("randomForest")
+```
+
+```{r}
+Stigmatomyces_R <- as.data.frame(read_excel('pathway/Stigmatomyces_table_all_species_R_v2026.xlsx'))
+```
+
+```{r}
+summary(as.factor(Stigmatomyces_R$Suggested_genus))
+```
+
+```{r}
+X <- Stigmatomyces_R[, 6:19]
+X <- data.frame(lapply(X, as.factor))
+y <- as.factor(Stigmatomyces_R[, "Suggested_genus"])
+
+# Train Random Forest
+rf <- randomForest(x=X, y=y, ntree=10000)
+
+# Variable importance
+importance(rf)
+varImpPlot(rf)
+
+# Get variable importance
+imp <- importance(rf)
+
+# Convert to data frame for easier handling
+imp_df <- data.frame(Variable = rownames(imp), imp)
+
+# Sort by MeanDecreaseGini
+imp_df_sorted <- imp_df[order(imp_df$MeanDecreaseGini, decreasing = TRUE), ]
+
+
+print(imp_df_sorted)
+```
+
+
+Analysis with hosts included as variable
+```{r}
+Stigmatomyces_R_mod2 <- Stigmatomyces_R[, -c(20)]
+
+
+res.mca <- MCA(Stigmatomyces_R_mod2[, 6:19], ncp = 10, graph = TRUE)
+
+eig.val <- get_eigenvalue(res.mca)
+fviz_screeplot(res.mca, addlabels = TRUE, ylim = c(0, 45))
+
+fviz_mca_var(res.mca, choice = "mca.cor", 
+            repel = TRUE, # Avoid text overlapping (slow)
+            ggtheme = theme_minimal())
+
+p <- fviz_mca_var(res.mca, col.var = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+             repel = TRUE, # avoid text overlapping (slow)
+             ggtheme = theme_minimal()
+             )
+
+grp <- as.factor(Stigmatomyces_R_mod2[, "Suggested_genus"])
+p <- fviz_mca_ind(res.mca, label="none", habillage=grp,
+       addEllipses=TRUE, ellipse.level=0.95, ellipse.type = "convex")
+
+p 
+
+```
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+library(ggplot2)
+
+Stigmatomyces_R_mod3 <- Stigmatomyces_R[, -c(7,8,10,11,13,15,16,17,18,19,20)]
+
+my_colors <- c("Gloeandromyces" = "#b31d30ff", 
+               "Fanniomyces" = "#67a9cfff", 
+               "Appendiculina" = "#2166acff",
+               "Stigmatomyces s.s." = "#fddbc7ff",
+               "Stigmatomyces s.l. group 1" = "#d1e5f0ff",
+               "Stigmatomyces s.l. group 2" = "#ef8a62ff")  # replace with your actual group names
+
+# Run MCA
+res.mca <- MCA(Stigmatomyces_R_mod3[, 6:9], ncp = 50, graph = TRUE)
+
+# Eigenvalues + screeplot
+eig.val <- get_eigenvalue(res.mca)
+fviz_screeplot(res.mca, addlabels = TRUE, ylim = c(0, 45))
+
+
+# Individuals plot + jitter
+p <- fviz_mca_ind(res.mca, 
+                  label = "none", 
+                  habillage = as.factor(Stigmatomyces_R_mod3[, "Suggested_genus"]),
+                  palette = my_colors,
+                  addEllipses = TRUE, 
+                  ellipse.type = "convex", 
+                  ellipse.level = 0.95,
+                  ggtheme = theme_minimal())
+
+p_jit <- p + 
+  geom_jitter(width = 0.1, height = 0.1, aes(color = grp)) +
+  theme(legend.position = "bottom",
+        legend.title = element_text(size = 10, face = "bold"),
+        legend.text = element_text(size = 9))
+
+# Display the plot
+print(p_jit)
+```
+
+```{r}
+library(ggplot2)
+library(factoextra)
+library(FactoMineR)
+
+p_ind <- fviz_mca_ind(res.mca, 
+                      label = "none", 
+                      habillage = grp,
+                      addEllipses = TRUE, 
+                      ellipse.type = "convex", 
+                      ellipse.level = 0.95,
+                      ggtheme = theme_minimal())
+
+# Extract variable coordinates
+var <- get_mca_var(res.mca)
+var_coords <- as.data.frame(var$coord)
+var_coords$varname <- rownames(var_coords)
+names(var_coords) <- gsub(" ", ".", names(var_coords))  # fix column names
+
+var_coords$contrib_total <- rowSums(var$contrib[, 1:2])
+
+# Choose how many top variables to plot
+n_top <- 20
+
+
+# Overlay variable arrows and labels
+p_combined <- p_ind +
+  geom_segment(data = var_coords,
+               aes(x = 0, y = 0, xend = Dim.1, yend = Dim.2),
+               arrow = arrow(length = unit(0.25, "cm")),
+               color = "gray30", alpha = 0.8) +
+  geom_text(data = var_coords,
+            aes(x = Dim.1, y = Dim.2, label = varname),
+            size = 3, vjust = -0.5, color = "black") +
+  ggtitle(paste("MCA: Individuals (with groups) and Top", n_top, "Variable Arrows"))
+
+
+p_combined + geom_jitter(width = 0.1, height = 0.1, aes(color = grp))
+```
+
+```{r}
+table(Stigmatomyces_R$Suggested_genus, Stigmatomyces_R$Host_family)
+```
