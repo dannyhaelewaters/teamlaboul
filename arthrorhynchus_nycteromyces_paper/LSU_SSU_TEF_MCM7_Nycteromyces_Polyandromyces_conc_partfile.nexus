@@ -1,0 +1,11 @@
+#nexus
+BEGIN SETS; 
+	CHARSET LSU = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 1-947;
+	CHARSET MCM7_1 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 948-1573\3;
+	CHARSET MCM7_2 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 949-1573\3;
+	CHARSET MCM7_3 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 950-1573\3;
+	CHARSET SSU = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 1574-2140;
+	CHARSET TEF_1 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 2141-2762\3;
+	CHARSET TEF_2 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 2142-2762\3;
+	CHARSET TEF_3 = LSU_SSU_TEF_MCM7_Nycteromyces_Polyandromyces_conc.nexus : 2143-2762\3;
+END; 

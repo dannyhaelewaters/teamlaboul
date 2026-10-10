@@ -1,0 +1,8 @@
+#nexus
+begin sets; 
+	CHARSET LSU = SSU_LSU_TEF_Arth_Hesp_Prolix_conc_correct.nexus : 1-935;
+	CHARSET SSU = SSU_LSU_TEF_Arth_Hesp_Prolix_conc_correct.nexus : 936-1810;
+	CHARSET TEF.1 = SSU_LSU_TEF_Arth_Hesp_Prolix_conc_correct.nexus : 1811-2423\3;
+	CHARSET TEF.2 = SSU_LSU_TEF_Arth_Hesp_Prolix_conc_correct.nexus : 1812-2423\3;
+	CHARSET TEF.3 = SSU_LSU_TEF_Arth_Hesp_Prolix_conc_correct.nexus : 1813-2423\3;
+end;
